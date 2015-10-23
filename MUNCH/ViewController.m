@@ -21,6 +21,9 @@
 - (IBAction)buttonNo:(UIButton *)sender {
     NSLog(@"You clicked the no button");
 }
+- (IBAction)Info:(UIButton *)sender {
+    NSLog(@"You want more info");
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
