@@ -18,6 +18,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
 }
+- (IBAction)buttonNo:(UIButton *)sender {
+    NSLog(@"You clicked the no button");
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
