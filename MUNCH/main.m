@@ -43,7 +43,7 @@ int main(int argc, const char * argv[]) {
             if (error) {
                 NSLog(@"An error happened during the request: %@", error);
             } else if (topBusinessJSON) {
-                //NSLog(@"Top business info: \n %@", topBusinessJSON);
+                NSLog(@"Top business info: \n %@", topBusinessJSON);
                 NSLog(@"More stuff %@\n", [topBusinessJSON objectForKey:@"categories"]);
                 NSLog(@"More stuff %lu\n", (unsigned long)[topBusinessJSON count]);
                 
