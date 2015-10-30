@@ -33,7 +33,7 @@ static NSString * const kSearchLimit       = @"15";
       NSArray *businessArray = searchResponseJSON[@"businesses"];
 
       if ([businessArray count] > 0) {
-          NSLog(@"", [businessArray]);
+          //NSLog(@"", [businessArray]);
         NSDictionary *firstBusiness = [businessArray firstObject];
         NSString *firstBusinessID = firstBusiness[@"id"];
         NSLog(@"%lu businesses found, querying business info for the top result: %@", (unsigned long)[businessArray count], firstBusinessID);

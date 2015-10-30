@@ -23,7 +23,7 @@ int main(int argc, const char * argv[]) {
 
   @autoreleasepool {
 
-    NSString *defaultTerm = @"Mexican pho";
+    NSString *defaultTerm = @"Pho";
     NSString *defaultLocation = @"Rohnert Park, CA";
 
     //Get the term and location from the command line if there were any, otherwise assign default values.
@@ -41,9 +41,8 @@ int main(int argc, const char * argv[]) {
         NSLog(@"An error happened during the request: %@", error);
       } else if (topBusinessJSON) {
         //NSLog(@"Top business info: \n %@", topBusinessJSON);
-          NSDictionary *reviews = [topBusinessJSON objectForKey:@"reviews"];
-          NSLog(@"\nReviews: %@\n", reviews);
-        NSLog(@"\nDictionary count: %lu\n", (unsigned long)[topBusinessJSON count]);
+        NSLog(@"More stuff %@\n", [topBusinessJSON objectForKey:@"categories"]);
+        NSLog(@"More stuff %lu\n", (unsigned long)[topBusinessJSON count]);
 
       } else {
         NSLog(@"No business was found");
