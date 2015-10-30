@@ -26,7 +26,7 @@ int main(int argc, const char * argv[]) {
     
     @autoreleasepool {
         
-        NSString *defaultTerm = @"Pho";
+        NSString *defaultTerm = @"Resturnats American Chinese Mexican";
         NSString *defaultLocation = @"Rohnert Park, CA";
         
         //Get the term and location from the command line if there were any, otherwise assign default values.

@@ -4,6 +4,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "NSURLRequest+OAuth.h"
+
 
 /**
  Sample class for accessing the Yelp API V2.
@@ -22,7 +24,7 @@
  @param term: The term of the search, e.g: dinner
  @param location: The location in which the term should be searched for, e.g: San Francisco, CA
  */
-- (void)queryTopBusinessInfoForTerm:(NSString *)term location:(NSString *)location radius:(NSInteger *)radius completionHandler:(void (^)(NSDictionary *jsonResponse, NSError *error))completionHandler;
+- (void)queryTopBusinessInfoForTerm:(NSString *)term location:(NSString *)location completionHandler:(void (^)(NSDictionary *jsonResponse, NSError *error))completionHandler;
 
 
 @end
