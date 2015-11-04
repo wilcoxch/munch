@@ -11,6 +11,9 @@
 @interface ViewController : UIViewController
 
 - (IBAction)buttonNo:(UIButton *)sender;
+@property (weak, nonatomic) IBOutlet UISlider *DistanceSlider;
+@property (weak, nonatomic) IBOutlet UISlider *PriceSlider;
+
 
 @end
 

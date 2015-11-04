@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="l1E-Bp-wOx">
             <objects>
-                <viewController id="eJX-OX-UGc" sceneMemberID="viewController">
+                <viewController id="eJX-OX-UGc" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qza-u3-e3X"/>
                         <viewControllerLayoutGuide type="bottom" id="tvr-kw-YJl"/>
@@ -17,9 +16,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="JnE-MM-3E2">
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="15" minValue="1" maxValue="30" translatesAutoresizingMaskIntoConstraints="NO" id="JnE-MM-3E2">
                                 <rect key="frame" x="31" y="163" width="313" height="31"/>
                                 <animations/>
+                                <connections>
+                                    <action selector="DistanceSlider:" destination="eJX-OX-UGc" eventType="valueChanged" id="XYC-Ok-KZM"/>
+                                </connections>
                             </slider>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Distance" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AIB-qE-KkB">
                                 <rect key="frame" x="105" y="120" width="164" height="30"/>
@@ -41,18 +43,46 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="highlightedColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="umD-dm-v86">
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="3" minValue="1" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="umD-dm-v86">
                                 <rect key="frame" x="31" y="278" width="313" height="31"/>
                                 <animations/>
+                                <connections>
+                                    <action selector="PriceSlider:" destination="eJX-OX-UGc" eventType="valueChanged" id="0LS-vA-aDm"/>
+                                </connections>
                             </slider>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bms-Tt-vfT">
+                                <rect key="frame" x="16" y="19" width="46" height="30"/>
+                                <animations/>
+                                <accessibility key="accessibilityConfiguration" label=""/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="vXZ-lx-hvc" kind="show" id="31g-as-sGu"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="mRP-nT-2sc" appends="YES" id="blb-1R-b9u"/>
+                        </connections>
                     </view>
+                    <navigationItem key="navigationItem" id="Tx0-DO-bfc"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="DistanceSlider" destination="JnE-MM-3E2" id="wXJ-Wr-vXX"/>
+                        <outlet property="PriceSlider" destination="umD-dm-v86" id="TTg-Ne-ti8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oMy-VI-B5A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="mRP-nT-2sc">
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="show" id="Y3e-YX-J2W"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="492.5" y="-343.5"/>
+            <point key="canvasLocation" x="572.5" y="-438.5"/>
         </scene>
         <!--Main Screen-->
         <scene sceneID="ufC-wZ-h7g">
@@ -75,10 +105,6 @@
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8RV-Ln-bCi">
                                 <rect key="frame" x="39" y="119" width="297" height="354"/>
-                                <animations/>
-                            </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hwC-lj-I51">
-                                <rect key="frame" x="49" y="129" width="297" height="354"/>
                                 <animations/>
                             </containerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="MUNCH" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0IL-r9-Sw8">
@@ -129,16 +155,24 @@
                                     <action selector="buttonNo:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="FhH-pw-sRv"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZGy-5O-n46">
-                                <rect key="frame" x="308" y="28" width="57" height="30"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hwC-lj-I51">
+                                <rect key="frame" x="49" y="129" width="297" height="354"/>
+                                <animations/>
+                            </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nKK-bA-Euc">
+                                <rect key="frame" x="16" y="19" width="57" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Settings">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="eJX-OX-UGc" kind="show" id="TAA-9t-fEi"/>
+                                    <segue destination="eJX-OX-UGc" kind="show" id="zM7-QZ-qvG"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="MunchSettings.png" translatesAutoresizingMaskIntoConstraints="NO" id="fTa-7U-JIX">
+                                <rect key="frame" x="11" y="0.0" width="67" height="67"/>
+                                <animations/>
+                            </imageView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -158,14 +192,14 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="280.5" y="422.5"/>
+            <point key="canvasLocation" x="294.5" y="422.5"/>
         </scene>
         <!--Temp List-->
         <scene sceneID="jhs-Ra-dpN">
             <objects>
                 <tableViewController title="Temp List" id="oOL-Gf-edS" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Aj6-8a-MHC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="559"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -186,17 +220,39 @@
                             <outlet property="delegate" destination="oOL-Gf-edS" id="Qsx-IW-jUG"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="lf3-GQ-Ww8"/>
+                    <navigationItem key="navigationItem" title="Temp List" id="lf3-GQ-Ww8">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="gnL-s4-rNt"/>
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="Z12-Ft-vFF">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="vGi-9e-ntE">
+                                <rect key="frame" x="-23" y="-15" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                                <state key="normal" title="Back">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="vXZ-lx-hvc" kind="modal" modalTransitionStyle="coverVertical" id="BRe-Df-p9r"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qfv-qQ-jZ6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="left" id="dAo-GD-htX">
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="show" id="d2F-b7-uUD"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1203.5" y="422.5"/>
+            <point key="canvasLocation" x="1380.5" y="422.5"/>
         </scene>
         <!--Nav Control1-->
         <scene sceneID="PbR-2c-IPZ">
             <objects>
-                <navigationController title="Nav Control1" id="4k6-cr-SKT" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6jl-QU-oaz">
+                <navigationController title="Nav Control1" toolbarHidden="NO" id="4k6-cr-SKT" sceneMemberID="viewController">
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="6jl-QU-oaz">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <animations/>
@@ -207,7 +263,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mrM-4o-AvU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="738.5" y="422.5"/>
+            <point key="canvasLocation" x="811.5" y="422.5"/>
         </scene>
         <!--FoodContainer-->
         <scene sceneID="5C5-aN-MG5">
@@ -220,6 +276,12 @@
                     <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="heF-1s-DkH">
                         <rect key="frame" x="0.0" y="0.0" width="297" height="354"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qX3-zk-WOj">
+                                <rect key="frame" x="0.0" y="0.0" width="297" height="354"/>
+                                <animations/>
+                            </imageView>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -230,7 +292,11 @@
             <point key="canvasLocation" x="462.5" y="1056"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="MunchSettings.png" width="600" height="600"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Gz6-gO-BAw"/>
+        <segue reference="Y3e-YX-J2W"/>
     </inferredMetricsTieBreakers>
 </document>
