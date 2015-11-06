@@ -30,7 +30,7 @@ static NSString * const kSearchLimit       = @"15";
     if (!error && httpResponse.statusCode == 200) {
 
       NSDictionary *searchResponseJSON = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
-        NSLog(@"%@", searchResponseJSON);
+        //NSLog(@"%@", searchResponseJSON);
       NSArray *businessArray = searchResponseJSON[@"businesses"];
 
       if ([businessArray count] > 0) {
