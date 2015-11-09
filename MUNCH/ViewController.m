@@ -47,15 +47,16 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault  reuseIdentifier:MyIdentifier];
     }
     
-    NSLog(@"Table view stuff: %@", [_APIdata objectForKey:@"display_phone"]);
-    cell.textLabel.text = [_APIdata objectForKey:@"display_phone"];
+    NSLog(@"Table view stuff: %@", [_APIdata objectForKey:@"name"]);
+    cell.textLabel.text = [_APIdata objectForKey:@"name"];
+
     
     
     return cell;
 }
 
 - (void)YelpCall{
-        NSString *defaultTerm = @"Resturnats American Chinese Mexican";
+        NSString *defaultTerm = @"pho";
         NSString *defaultLocation = @"Rohnert Park, CA";
         
         //Get the term and location from the command line if there were any, otherwise assign default values.
