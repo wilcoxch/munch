@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		31CD3AC01BE9AE1A00950065 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 31CD3ABF1BE9AE1A00950065 /* main.m */; };
 		31D5FDAA1BE0797A0052B703 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31D5FDA91BE0797A0052B703 /* Foundation.framework */; settings = {ATTRIBUTES = (Required, ); }; };
-		31FF573B1BE30C620086815E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 31FF57341BE30C620086815E /* main.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		31FF573C1BE30C620086815E /* NSURLRequest+OAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = 31FF57361BE30C620086815E /* NSURLRequest+OAuth.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		31FF573E1BE30C620086815E /* YPAPISample.m in Sources */ = {isa = PBXBuildFile; fileRef = 31FF573A1BE30C620086815E /* YPAPISample.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		31FF57831BE30CC10086815E /* OACall.m in Sources */ = {isa = PBXBuildFile; fileRef = 31FF576A1BE30CC10086815E /* OACall.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -30,7 +30,7 @@
 		31FF57AB1BE30D400086815E /* sha1.c in Sources */ = {isa = PBXBuildFile; fileRef = 31FF57A71BE30D400086815E /* sha1.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		3F67D76C1BD1E41F003D2F75 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F67D76B1BD1E41F003D2F75 /* AppDelegate.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		3F67D76F1BD1E41F003D2F75 /* MUNCH.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3F67D76D1BD1E41F003D2F75 /* MUNCH.xcdatamodeld */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		3F67D7721BD1E41F003D2F75 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F67D7711BD1E41F003D2F75 /* ViewController.m */; };
+		3F67D7721BD1E41F003D2F75 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F67D7711BD1E41F003D2F75 /* ViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		3F67D7751BD1E41F003D2F75 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F67D7731BD1E41F003D2F75 /* Main.storyboard */; };
 		3F67D7771BD1E41F003D2F75 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F67D7761BD1E41F003D2F75 /* Images.xcassets */; };
 		3F67D77A1BD1E41F003D2F75 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F67D7781BD1E41F003D2F75 /* LaunchScreen.xib */; };
@@ -50,8 +50,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		31CD3ABF1BE9AE1A00950065 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		31D5FDA91BE0797A0052B703 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		31FF57341BE30C620086815E /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		31FF57351BE30C620086815E /* NSURLRequest+OAuth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLRequest+OAuth.h"; sourceTree = "<group>"; };
 		31FF57361BE30C620086815E /* NSURLRequest+OAuth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLRequest+OAuth.m"; sourceTree = "<group>"; };
 		31FF57381BE30C620086815E /* YelpAPISample-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "YelpAPISample-Prefix.pch"; sourceTree = "<group>"; };
@@ -141,8 +141,8 @@
 		31FF57331BE30C400086815E /* Yelp */ = {
 			isa = PBXGroup;
 			children = (
+				31CD3ABF1BE9AE1A00950065 /* main.m */,
 				31FF573F1BE30C730086815E /* OAuthConsumer */,
-				31FF57341BE30C620086815E /* main.m */,
 				31FF57351BE30C620086815E /* NSURLRequest+OAuth.h */,
 				31FF57361BE30C620086815E /* NSURLRequest+OAuth.m */,
 				31FF57381BE30C620086815E /* YelpAPISample-Prefix.pch */,
@@ -385,7 +385,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				31FF57AA1BE30D400086815E /* hmac.c in Sources */,
-				31FF573B1BE30C620086815E /* main.m in Sources */,
 				31FF578B1BE30CC10086815E /* OAServiceTicket.m in Sources */,
 				3F67D76C1BD1E41F003D2F75 /* AppDelegate.m in Sources */,
 				31FF57861BE30CC10086815E /* OAHMAC_SHA1SignatureProvider.m in Sources */,
@@ -395,6 +394,7 @@
 				3F67D7721BD1E41F003D2F75 /* ViewController.m in Sources */,
 				31FF57891BE30CC10086815E /* OAProblem.m in Sources */,
 				31FF57A01BE30D170086815E /* NSString+URLEncoding.m in Sources */,
+				31CD3AC01BE9AE1A00950065 /* main.m in Sources */,
 				31FF57AB1BE30D400086815E /* sha1.c in Sources */,
 				31FF578C1BE30CC10086815E /* OAToken.m in Sources */,
 				31FF57881BE30CC10086815E /* OAPlaintextSignatureProvider.m in Sources */,

@@ -8,11 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <
+    UITableViewDataSource, UITableViewDelegate>
 
 - (IBAction)buttonNo:(UIButton *)sender;
-@property (weak, nonatomic) IBOutlet UISlider *DistanceSlider;
-@property (weak, nonatomic) IBOutlet UISlider *PriceSlider;
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) IBOutlet UISlider *DistanceSlider;
+@property (strong, nonatomic) IBOutlet UISlider *PriceSlider;
 
 
 @end
