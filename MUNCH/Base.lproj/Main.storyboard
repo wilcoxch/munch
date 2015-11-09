@@ -159,20 +159,20 @@
                                 <rect key="frame" x="49" y="129" width="297" height="354"/>
                                 <animations/>
                             </containerView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nKK-bA-Euc">
-                                <rect key="frame" x="16" y="19" width="57" height="30"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Settings.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="kWS-HE-QtS">
+                                <rect key="frame" x="21" y="10" width="46" height="47"/>
                                 <animations/>
-                                <state key="normal" title="Settings">
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nKK-bA-Euc">
+                                <rect key="frame" x="29" y="19" width="30" height="30"/>
+                                <animations/>
+                                <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="eJX-OX-UGc" kind="show" id="zM7-QZ-qvG"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="MunchSettings.png" translatesAutoresizingMaskIntoConstraints="NO" id="fTa-7U-JIX">
-                                <rect key="frame" x="11" y="0.0" width="67" height="67"/>
-                                <animations/>
-                            </imageView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -293,7 +293,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="MunchSettings.png" width="600" height="600"/>
+        <image name="Settings.jpg" width="150" height="150"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Gz6-gO-BAw"/>

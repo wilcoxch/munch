@@ -35,8 +35,8 @@
 		3F67D7771BD1E41F003D2F75 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F67D7761BD1E41F003D2F75 /* Images.xcassets */; };
 		3F67D77A1BD1E41F003D2F75 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F67D7781BD1E41F003D2F75 /* LaunchScreen.xib */; };
 		3F67D7861BD1E41F003D2F75 /* MUNCHTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F67D7851BD1E41F003D2F75 /* MUNCHTests.m */; };
-		82B6E0471BE9C09F00658C08 /* MunchSettings.png in Resources */ = {isa = PBXBuildFile; fileRef = 82B6E0461BE9C09F00658C08 /* MunchSettings.png */; };
 		82E7F5081BE31CA9003A1785 /* Restaurant.m in Sources */ = {isa = PBXBuildFile; fileRef = 82E7F5071BE31CA9003A1785 /* Restaurant.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		82FE3A361BF06B2600B28CC6 /* Settings.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82FE3A351BF06B2600B28CC6 /* Settings.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,9 +106,9 @@
 		3F67D77F1BD1E41F003D2F75 /* MUNCHTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MUNCHTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F67D7841BD1E41F003D2F75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F67D7851BD1E41F003D2F75 /* MUNCHTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MUNCHTests.m; sourceTree = "<group>"; };
-		82B6E0461BE9C09F00658C08 /* MunchSettings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MunchSettings.png; sourceTree = "<group>"; };
 		82E7F5061BE31CA9003A1785 /* Restaurant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Restaurant.h; sourceTree = "<group>"; };
 		82E7F5071BE31CA9003A1785 /* Restaurant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Restaurant.m; sourceTree = "<group>"; };
+		82FE3A351BF06B2600B28CC6 /* Settings.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Settings.jpg; path = ../Images/Settings.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -278,7 +278,7 @@
 		82B6E0431BE9AE3A00658C08 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				82B6E0461BE9C09F00658C08 /* MunchSettings.png */,
+				82FE3A351BF06B2600B28CC6 /* Settings.jpg */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -363,7 +363,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				82B6E0471BE9C09F00658C08 /* MunchSettings.png in Resources */,
+				82FE3A361BF06B2600B28CC6 /* Settings.jpg in Resources */,
 				3F67D7751BD1E41F003D2F75 /* Main.storyboard in Resources */,
 				3F67D77A1BD1E41F003D2F75 /* LaunchScreen.xib in Resources */,
 				3F67D7771BD1E41F003D2F75 /* Images.xcassets in Resources */,
