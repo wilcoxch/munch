@@ -19,17 +19,26 @@
 
 @implementation ViewController
 
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self YelpCall];
     // Do any additional setup after loading the view, typically from a nib.
 }
+
 - (IBAction)buttonNo:(UIButton *)sender {
     NSLog(@"You clicked the no button");
 }
 - (IBAction)Info:(UIButton *)sender {
     NSLog(@"You want more info");
 }
+
+
+- (IBAction)Settings:(UIButton *)sender {
+    NSLog(@"You clicked Settings");
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
