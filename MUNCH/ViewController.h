@@ -16,6 +16,5 @@
 @property (strong, nonatomic) IBOutlet UISlider *DistanceSlider;
 @property (strong, nonatomic) IBOutlet UISlider *PriceSlider;
 
-
 @end
 

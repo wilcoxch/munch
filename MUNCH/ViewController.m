@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "YPAPISample.h"
 #import <Foundation/Foundation.h>
+#import "GGView.h"
 
 
 @interface ViewController ()
@@ -24,6 +25,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self YelpCall];
+    self.view = [[GGView alloc] init];
     // Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -45,6 +47,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return [_APIdata count];
 }
@@ -55,6 +59,7 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault  reuseIdentifier:MyIdentifier];
     }
+    
     
     NSLog(@"Table view stuff: %@", [_APIdata objectForKey:@"name"]);
     cell.textLabel.text = [_APIdata objectForKey:@"name"];
@@ -102,5 +107,7 @@
         
         dispatch_group_wait(requestGroup, DISPATCH_TIME_FOREVER); // This avoids the program exiting before all our asynchronous callbacks have been made.
 }
+
+
 
 @end
