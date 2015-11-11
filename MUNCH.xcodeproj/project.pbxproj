@@ -35,6 +35,12 @@
 		3F67D7771BD1E41F003D2F75 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F67D7761BD1E41F003D2F75 /* Images.xcassets */; };
 		3F67D77A1BD1E41F003D2F75 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F67D7781BD1E41F003D2F75 /* LaunchScreen.xib */; };
 		3F67D7861BD1E41F003D2F75 /* MUNCHTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F67D7851BD1E41F003D2F75 /* MUNCHTests.m */; };
+		829A99F81BF15D5600C418FF /* bar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 829A99F71BF15D5600C418FF /* bar@2x.png */; };
+		829A99FA1BF15DCB00C418FF /* trollface_300x200@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 829A99F91BF15DCB00C418FF /* trollface_300x200@2x.png */; };
+		82A1F0E71BF1300A00AE8E58 /* GGDraggableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 82A1F0E11BF1300A00AE8E58 /* GGDraggableView.m */; };
+		82A1F0E81BF1300A00AE8E58 /* GGOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 82A1F0E31BF1300A00AE8E58 /* GGOverlayView.m */; };
+		82A1F0E91BF1300A00AE8E58 /* GGView.m in Sources */ = {isa = PBXBuildFile; fileRef = 82A1F0E51BF1300A00AE8E58 /* GGView.m */; };
+		82A1F0EE1BF130CA00AE8E58 /* thumbs_up_300x300@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82A1F0EB1BF130CA00AE8E58 /* thumbs_up_300x300@2x.png */; };
 		82E7F5081BE31CA9003A1785 /* Restaurant.m in Sources */ = {isa = PBXBuildFile; fileRef = 82E7F5071BE31CA9003A1785 /* Restaurant.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		82FE3A361BF06B2600B28CC6 /* Settings.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82FE3A351BF06B2600B28CC6 /* Settings.jpg */; };
 /* End PBXBuildFile section */
@@ -106,6 +112,15 @@
 		3F67D77F1BD1E41F003D2F75 /* MUNCHTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MUNCHTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F67D7841BD1E41F003D2F75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F67D7851BD1E41F003D2F75 /* MUNCHTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MUNCHTests.m; sourceTree = "<group>"; };
+		829A99F71BF15D5600C418FF /* bar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bar@2x.png"; path = "../Images/bar@2x.png"; sourceTree = "<group>"; };
+		829A99F91BF15DCB00C418FF /* trollface_300x200@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "trollface_300x200@2x.png"; path = "../Images/trollface_300x200@2x.png"; sourceTree = "<group>"; };
+		82A1F0E01BF1300A00AE8E58 /* GGDraggableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GGDraggableView.h; path = MUNCH.xcodeproj/GGDraggableView.h; sourceTree = SOURCE_ROOT; };
+		82A1F0E11BF1300A00AE8E58 /* GGDraggableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GGDraggableView.m; path = MUNCH.xcodeproj/GGDraggableView.m; sourceTree = SOURCE_ROOT; };
+		82A1F0E21BF1300A00AE8E58 /* GGOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GGOverlayView.h; path = MUNCH.xcodeproj/GGOverlayView.h; sourceTree = SOURCE_ROOT; };
+		82A1F0E31BF1300A00AE8E58 /* GGOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GGOverlayView.m; path = MUNCH.xcodeproj/GGOverlayView.m; sourceTree = SOURCE_ROOT; };
+		82A1F0E41BF1300A00AE8E58 /* GGView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GGView.h; path = MUNCH.xcodeproj/GGView.h; sourceTree = SOURCE_ROOT; };
+		82A1F0E51BF1300A00AE8E58 /* GGView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GGView.m; path = MUNCH.xcodeproj/GGView.m; sourceTree = SOURCE_ROOT; };
+		82A1F0EB1BF130CA00AE8E58 /* thumbs_up_300x300@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "thumbs_up_300x300@2x.png"; path = "MUNCH.xcodeproj/thumbs_up_300x300@2x.png"; sourceTree = SOURCE_ROOT; };
 		82E7F5061BE31CA9003A1785 /* Restaurant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Restaurant.h; sourceTree = "<group>"; };
 		82E7F5071BE31CA9003A1785 /* Restaurant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Restaurant.m; sourceTree = "<group>"; };
 		82FE3A351BF06B2600B28CC6 /* Settings.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Settings.jpg; path = ../Images/Settings.jpg; sourceTree = "<group>"; };
@@ -233,6 +248,7 @@
 		3F67D7651BD1E41F003D2F75 /* MUNCH */ = {
 			isa = PBXGroup;
 			children = (
+				829A99FB1BF1644800C418FF /* GGDraggable */,
 				82E7F5061BE31CA9003A1785 /* Restaurant.h */,
 				82E7F5071BE31CA9003A1785 /* Restaurant.m */,
 				3F67D76A1BD1E41F003D2F75 /* AppDelegate.h */,
@@ -251,6 +267,7 @@
 		3F67D7661BD1E41F003D2F75 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				82A1F0E61BF1300A00AE8E58 /* GGView */,
 				82B6E0431BE9AE3A00658C08 /* Images */,
 				31FF57331BE30C400086815E /* Yelp */,
 				3F67D7671BD1E41F003D2F75 /* Info.plist */,
@@ -275,9 +292,33 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		829A99FB1BF1644800C418FF /* GGDraggable */ = {
+			isa = PBXGroup;
+			children = (
+				82A1F0E01BF1300A00AE8E58 /* GGDraggableView.h */,
+				82A1F0E11BF1300A00AE8E58 /* GGDraggableView.m */,
+				82A1F0E21BF1300A00AE8E58 /* GGOverlayView.h */,
+				82A1F0E31BF1300A00AE8E58 /* GGOverlayView.m */,
+				82A1F0E41BF1300A00AE8E58 /* GGView.h */,
+				82A1F0E51BF1300A00AE8E58 /* GGView.m */,
+			);
+			name = GGDraggable;
+			sourceTree = "<group>";
+		};
+		82A1F0E61BF1300A00AE8E58 /* GGView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = GGView;
+			path = ../MUNCH.xcodeproj;
+			sourceTree = "<group>";
+		};
 		82B6E0431BE9AE3A00658C08 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				829A99F91BF15DCB00C418FF /* trollface_300x200@2x.png */,
+				829A99F71BF15D5600C418FF /* bar@2x.png */,
+				82A1F0EB1BF130CA00AE8E58 /* thumbs_up_300x300@2x.png */,
 				82FE3A351BF06B2600B28CC6 /* Settings.jpg */,
 			);
 			name = Images;
@@ -364,8 +405,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				82FE3A361BF06B2600B28CC6 /* Settings.jpg in Resources */,
+				829A99FA1BF15DCB00C418FF /* trollface_300x200@2x.png in Resources */,
 				3F67D7751BD1E41F003D2F75 /* Main.storyboard in Resources */,
+				829A99F81BF15D5600C418FF /* bar@2x.png in Resources */,
 				3F67D77A1BD1E41F003D2F75 /* LaunchScreen.xib in Resources */,
+				82A1F0EE1BF130CA00AE8E58 /* thumbs_up_300x300@2x.png in Resources */,
 				3F67D7771BD1E41F003D2F75 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -386,6 +430,7 @@
 			files = (
 				31FF57AA1BE30D400086815E /* hmac.c in Sources */,
 				31FF578B1BE30CC10086815E /* OAServiceTicket.m in Sources */,
+				82A1F0E91BF1300A00AE8E58 /* GGView.m in Sources */,
 				3F67D76C1BD1E41F003D2F75 /* AppDelegate.m in Sources */,
 				31FF57861BE30CC10086815E /* OAHMAC_SHA1SignatureProvider.m in Sources */,
 				31FF573E1BE30C620086815E /* YPAPISample.m in Sources */,
@@ -400,10 +445,12 @@
 				31FF57881BE30CC10086815E /* OAPlaintextSignatureProvider.m in Sources */,
 				31FF57871BE30CC10086815E /* OAMutableURLRequest.m in Sources */,
 				31FF57A11BE30D170086815E /* NSURL+Base.m in Sources */,
+				82A1F0E71BF1300A00AE8E58 /* GGDraggableView.m in Sources */,
 				82E7F5081BE31CA9003A1785 /* Restaurant.m in Sources */,
 				31FF573C1BE30C620086815E /* NSURLRequest+OAuth.m in Sources */,
 				31FF57841BE30CC10086815E /* OAConsumer.m in Sources */,
 				31FF57A91BE30D400086815E /* Base64Transcoder.c in Sources */,
+				82A1F0E81BF1300A00AE8E58 /* GGOverlayView.m in Sources */,
 				3F67D76F1BD1E41F003D2F75 /* MUNCH.xcdatamodeld in Sources */,
 				31FF578D1BE30CC10086815E /* OATokenManager.m in Sources */,
 				31FF57831BE30CC10086815E /* OACall.m in Sources */,

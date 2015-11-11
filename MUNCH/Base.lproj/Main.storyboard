@@ -153,6 +153,7 @@
                                 </state>
                                 <connections>
                                     <action selector="buttonNo:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="FhH-pw-sRv"/>
+                                    <segue destination="mcu-eG-eAh" kind="show" id="mLP-EB-RXE"/>
                                 </connections>
                             </button>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hwC-lj-I51">
@@ -163,16 +164,6 @@
                                 <rect key="frame" x="21" y="10" width="46" height="47"/>
                                 <animations/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nKK-bA-Euc">
-                                <rect key="frame" x="29" y="19" width="30" height="30"/>
-                                <animations/>
-                                <state key="normal">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="eJX-OX-UGc" kind="show" id="zM7-QZ-qvG"/>
-                                </connections>
-                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WfX-OT-fAW">
                                 <rect key="frame" x="67" y="155" width="240" height="302"/>
                                 <animations/>
@@ -182,6 +173,16 @@
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="UjM-bh-peT"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nKK-bA-Euc">
+                                <rect key="frame" x="26" y="16" width="36" height="36"/>
+                                <animations/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="eJX-OX-UGc" kind="show" id="zM7-QZ-qvG"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -277,6 +278,31 @@
             </objects>
             <point key="canvasLocation" x="983.5" y="447.5"/>
         </scene>
+        <!--Dragable View-->
+        <scene sceneID="fzL-dd-Znu">
+            <objects>
+                <viewController id="mcu-eG-eAh" customClass="GGDragableView" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yIU-g7-nFF"/>
+                        <viewControllerLayoutGuide type="bottom" id="M7d-D6-mHh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FZt-UG-J8w" customClass="GGDragableView">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="7v2-DK-2ks" appends="YES" id="wF4-h7-kdI"/>
+                        </connections>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D4p-gj-n5C" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="7v2-DK-2ks"/>
+            </objects>
+            <point key="canvasLocation" x="78.5" y="1245.5"/>
+        </scene>
         <!--FoodContainer-->
         <scene sceneID="5C5-aN-MG5">
             <objects>
@@ -308,7 +334,7 @@
         <image name="Settings.jpg" width="150" height="150"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="d2F-b7-uUD"/>
+        <segue reference="Y3e-YX-J2W"/>
         <segue reference="Gz6-gO-BAw"/>
     </inferredMetricsTieBreakers>
 </document>
