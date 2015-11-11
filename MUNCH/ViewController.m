@@ -25,7 +25,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self YelpCall];
-    self.view = [[GGView alloc] init];
     // Do any additional setup after loading the view, typically from a nib.
 }
 
