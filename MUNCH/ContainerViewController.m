@@ -9,7 +9,8 @@
 #import "ContainerViewController.h"
 #import "YPAPISample.h"
 #import <Foundation/Foundation.h>
-#import "GGView.h"
+#import "DraggableViewBackground.h"
+
 
 @interface ContainerViewController ()
 
@@ -19,7 +20,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view = [[GGView alloc] init];
+    DraggableViewBackground *draggableBackground = [[DraggableViewBackground alloc]initWithFrame:self.view.frame];
+    [self.view addSubview:draggableBackground];
+
     
     // Do any additional setup after loading the view.
 }
