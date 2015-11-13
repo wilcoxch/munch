@@ -38,10 +38,10 @@
 		3FB16D341BF2F2F100367786 /* ContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FB16D331BF2F2F100367786 /* ContainerViewController.m */; };
 		829A99F81BF15D5600C418FF /* bar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 829A99F71BF15D5600C418FF /* bar@2x.png */; };
 		829A99FA1BF15DCB00C418FF /* trollface_300x200@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 829A99F91BF15DCB00C418FF /* trollface_300x200@2x.png */; };
-		82A1F0E71BF1300A00AE8E58 /* GGDraggableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 82A1F0E11BF1300A00AE8E58 /* GGDraggableView.m */; };
-		82A1F0E81BF1300A00AE8E58 /* GGOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 82A1F0E31BF1300A00AE8E58 /* GGOverlayView.m */; };
-		82A1F0E91BF1300A00AE8E58 /* GGView.m in Sources */ = {isa = PBXBuildFile; fileRef = 82A1F0E51BF1300A00AE8E58 /* GGView.m */; };
 		82A1F0EE1BF130CA00AE8E58 /* thumbs_up_300x300@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82A1F0EB1BF130CA00AE8E58 /* thumbs_up_300x300@2x.png */; };
+		82A22BFE1BF596BE00265C56 /* DraggableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 82A22BF91BF596BE00265C56 /* DraggableView.m */; };
+		82A22BFF1BF596BE00265C56 /* DraggableViewBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = 82A22BFB1BF596BE00265C56 /* DraggableViewBackground.m */; };
+		82A22C001BF596BE00265C56 /* OverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 82A22BFD1BF596BE00265C56 /* OverlayView.m */; };
 		82E7F5081BE31CA9003A1785 /* Restaurant.m in Sources */ = {isa = PBXBuildFile; fileRef = 82E7F5071BE31CA9003A1785 /* Restaurant.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		82FE3A361BF06B2600B28CC6 /* Settings.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82FE3A351BF06B2600B28CC6 /* Settings.jpg */; };
 /* End PBXBuildFile section */
@@ -117,13 +117,13 @@
 		3FB16D331BF2F2F100367786 /* ContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContainerViewController.m; sourceTree = "<group>"; };
 		829A99F71BF15D5600C418FF /* bar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bar@2x.png"; path = "../Images/bar@2x.png"; sourceTree = "<group>"; };
 		829A99F91BF15DCB00C418FF /* trollface_300x200@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "trollface_300x200@2x.png"; path = "../Images/trollface_300x200@2x.png"; sourceTree = "<group>"; };
-		82A1F0E01BF1300A00AE8E58 /* GGDraggableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GGDraggableView.h; path = MUNCH.xcodeproj/GGDraggableView.h; sourceTree = SOURCE_ROOT; };
-		82A1F0E11BF1300A00AE8E58 /* GGDraggableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GGDraggableView.m; path = MUNCH.xcodeproj/GGDraggableView.m; sourceTree = SOURCE_ROOT; };
-		82A1F0E21BF1300A00AE8E58 /* GGOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GGOverlayView.h; path = MUNCH.xcodeproj/GGOverlayView.h; sourceTree = SOURCE_ROOT; };
-		82A1F0E31BF1300A00AE8E58 /* GGOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GGOverlayView.m; path = MUNCH.xcodeproj/GGOverlayView.m; sourceTree = SOURCE_ROOT; };
-		82A1F0E41BF1300A00AE8E58 /* GGView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GGView.h; path = MUNCH.xcodeproj/GGView.h; sourceTree = SOURCE_ROOT; };
-		82A1F0E51BF1300A00AE8E58 /* GGView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GGView.m; path = MUNCH.xcodeproj/GGView.m; sourceTree = SOURCE_ROOT; };
 		82A1F0EB1BF130CA00AE8E58 /* thumbs_up_300x300@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "thumbs_up_300x300@2x.png"; path = "MUNCH.xcodeproj/thumbs_up_300x300@2x.png"; sourceTree = SOURCE_ROOT; };
+		82A22BF81BF596BE00265C56 /* DraggableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DraggableView.h; path = DragView/DraggableView.h; sourceTree = "<group>"; };
+		82A22BF91BF596BE00265C56 /* DraggableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DraggableView.m; path = DragView/DraggableView.m; sourceTree = "<group>"; };
+		82A22BFA1BF596BE00265C56 /* DraggableViewBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DraggableViewBackground.h; path = DragView/DraggableViewBackground.h; sourceTree = "<group>"; };
+		82A22BFB1BF596BE00265C56 /* DraggableViewBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DraggableViewBackground.m; path = DragView/DraggableViewBackground.m; sourceTree = "<group>"; };
+		82A22BFC1BF596BE00265C56 /* OverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OverlayView.h; path = DragView/OverlayView.h; sourceTree = "<group>"; };
+		82A22BFD1BF596BE00265C56 /* OverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OverlayView.m; path = DragView/OverlayView.m; sourceTree = "<group>"; };
 		82E7F5061BE31CA9003A1785 /* Restaurant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Restaurant.h; sourceTree = "<group>"; };
 		82E7F5071BE31CA9003A1785 /* Restaurant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Restaurant.m; sourceTree = "<group>"; };
 		82FE3A351BF06B2600B28CC6 /* Settings.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Settings.jpg; path = ../Images/Settings.jpg; sourceTree = "<group>"; };
@@ -251,7 +251,7 @@
 		3F67D7651BD1E41F003D2F75 /* MUNCH */ = {
 			isa = PBXGroup;
 			children = (
-				829A99FB1BF1644800C418FF /* GGDraggable */,
+				82A22C011BF596D000265C56 /* DragView */,
 				82E7F5061BE31CA9003A1785 /* Restaurant.h */,
 				82E7F5071BE31CA9003A1785 /* Restaurant.m */,
 				3FB16D321BF2F2F100367786 /* ContainerViewController.h */,
@@ -297,25 +297,26 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		829A99FB1BF1644800C418FF /* GGDraggable */ = {
-			isa = PBXGroup;
-			children = (
-				82A1F0E01BF1300A00AE8E58 /* GGDraggableView.h */,
-				82A1F0E11BF1300A00AE8E58 /* GGDraggableView.m */,
-				82A1F0E21BF1300A00AE8E58 /* GGOverlayView.h */,
-				82A1F0E31BF1300A00AE8E58 /* GGOverlayView.m */,
-				82A1F0E41BF1300A00AE8E58 /* GGView.h */,
-				82A1F0E51BF1300A00AE8E58 /* GGView.m */,
-			);
-			name = GGDraggable;
-			sourceTree = "<group>";
-		};
 		82A1F0E61BF1300A00AE8E58 /* GGView */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			name = GGView;
 			path = ../MUNCH.xcodeproj;
+			sourceTree = "<group>";
+		};
+		82A22C011BF596D000265C56 /* DragView */ = {
+			isa = PBXGroup;
+			children = (
+				82A22BF81BF596BE00265C56 /* DraggableView.h */,
+				82A22BF91BF596BE00265C56 /* DraggableView.m */,
+				82A22BFA1BF596BE00265C56 /* DraggableViewBackground.h */,
+				82A22BFB1BF596BE00265C56 /* DraggableViewBackground.m */,
+				82A22BFC1BF596BE00265C56 /* OverlayView.h */,
+				82A22BFD1BF596BE00265C56 /* OverlayView.m */,
+			);
+			name = DragView;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		82B6E0431BE9AE3A00658C08 /* Images */ = {
@@ -433,14 +434,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82A22BFF1BF596BE00265C56 /* DraggableViewBackground.m in Sources */,
+				82A22BFE1BF596BE00265C56 /* DraggableView.m in Sources */,
 				31FF57AA1BE30D400086815E /* hmac.c in Sources */,
 				31FF578B1BE30CC10086815E /* OAServiceTicket.m in Sources */,
 				3FB16D341BF2F2F100367786 /* ContainerViewController.m in Sources */,
-				82A1F0E91BF1300A00AE8E58 /* GGView.m in Sources */,
 				3F67D76C1BD1E41F003D2F75 /* AppDelegate.m in Sources */,
 				31FF57861BE30CC10086815E /* OAHMAC_SHA1SignatureProvider.m in Sources */,
 				31FF573E1BE30C620086815E /* YPAPISample.m in Sources */,
 				31FF578A1BE30CC10086815E /* OARequestParameter.m in Sources */,
+				82A22C001BF596BE00265C56 /* OverlayView.m in Sources */,
 				31FF579F1BE30D170086815E /* NSMutableURLRequest+Parameters.m in Sources */,
 				3F67D7721BD1E41F003D2F75 /* ViewController.m in Sources */,
 				31FF57891BE30CC10086815E /* OAProblem.m in Sources */,
@@ -451,12 +454,10 @@
 				31FF57881BE30CC10086815E /* OAPlaintextSignatureProvider.m in Sources */,
 				31FF57871BE30CC10086815E /* OAMutableURLRequest.m in Sources */,
 				31FF57A11BE30D170086815E /* NSURL+Base.m in Sources */,
-				82A1F0E71BF1300A00AE8E58 /* GGDraggableView.m in Sources */,
 				82E7F5081BE31CA9003A1785 /* Restaurant.m in Sources */,
 				31FF573C1BE30C620086815E /* NSURLRequest+OAuth.m in Sources */,
 				31FF57841BE30CC10086815E /* OAConsumer.m in Sources */,
 				31FF57A91BE30D400086815E /* Base64Transcoder.c in Sources */,
-				82A1F0E81BF1300A00AE8E58 /* GGOverlayView.m in Sources */,
 				3F67D76F1BD1E41F003D2F75 /* MUNCH.xcdatamodeld in Sources */,
 				31FF578D1BE30CC10086815E /* OATokenManager.m in Sources */,
 				31FF57831BE30CC10086815E /* OACall.m in Sources */,
