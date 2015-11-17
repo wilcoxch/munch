@@ -50,27 +50,6 @@
 }
 
 
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return [_APIdata count];
-}
-
-- (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    static NSString *MyIdentifier = @"MyReuseIdentifier";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault  reuseIdentifier:MyIdentifier];
-    }
-    
-    
-    NSLog(@"Table view stuff: %@", [_APIdata objectForKey:@"name"]);
-    cell.textLabel.text = [_APIdata objectForKey:@"name"];
-
-    
-    
-    return cell;
-}
-
 - (void)YelpCall{
         NSString *defaultTerm = @"pho";
         NSString *defaultLocation = @"Rohnert Park, CA";
@@ -97,9 +76,9 @@
                 _APIdata = topBusinessJSON;
                 [_APIdata retain];
                 
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    [self.tableView reloadData];
-                });
+//                dispatch_async(dispatch_get_main_queue(), ^{
+//                    [self.tableView reloadData];
+//                });
             } else {
                 NSLog(@"No business was found");
             }
