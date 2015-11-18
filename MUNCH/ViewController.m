@@ -23,14 +23,14 @@
 
 @implementation ViewController {
 
-    NSDictionary *APIdata;
+    NSArray *APIdata;
 }
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self YelpCall];
-    //NSLog(@"APIdata: %@", APIdata);
+    NSLog(@"APIdata: %lu", (unsigned long)[APIdata count]);
 
     
 //    DraggableViewBackground *draggableBackground = [[DraggableViewBackground alloc]initWithFrame:self.view.frame];
@@ -53,6 +53,7 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+    [APIdata release];
     // Dispose of any resources that can be recreated.
 }
 
@@ -77,7 +78,7 @@
         dispatch_group_t requestGroup = dispatch_group_create();
         
         dispatch_group_enter(requestGroup);
-    [APISample queryTopBusinessInfoForTerm:term ll:ll radius_filter:radius_filter offset:offset completionHandler:^(NSDictionary *topBusinessJSON, NSError *error) {
+    [APISample queryTopBusinessInfoForTerm:term ll:ll radius_filter:radius_filter offset:offset completionHandler:^(NSArray *topBusinessJSON, NSError *error) {
             
             if (error) {
                 NSLog(@"An error happened during the request: %@", error);
@@ -89,6 +90,9 @@
                 //NSLog(@"Top business info: \n %@", _APIdata);
                 APIdata = topBusinessJSON;
                 [APIdata retain];
+                for (int i = 0; i < [APIdata count]; ++i) {
+                    NSLog(@"%@", [APIdata[i] objectForKey:@"id"]);
+                }
             } else {
                 NSLog(@"No business was found");
             }
