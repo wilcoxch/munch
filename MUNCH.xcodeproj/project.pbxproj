@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		313C21131BFB21B1000E71F2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 313C21121BFB21B1000E71F2 /* CoreLocation.framework */; };
 		31CD3AC01BE9AE1A00950065 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 31CD3ABF1BE9AE1A00950065 /* main.m */; };
 		31D5FDAA1BE0797A0052B703 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31D5FDA91BE0797A0052B703 /* Foundation.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		31FF573C1BE30C620086815E /* NSURLRequest+OAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = 31FF57361BE30C620086815E /* NSURLRequest+OAuth.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -57,6 +58,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		313C21121BFB21B1000E71F2 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		31CD3ABF1BE9AE1A00950065 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		31D5FDA91BE0797A0052B703 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		31FF57351BE30C620086815E /* NSURLRequest+OAuth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLRequest+OAuth.h"; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				313C21131BFB21B1000E71F2 /* CoreLocation.framework in Frameworks */,
 				31D5FDAA1BE0797A0052B703 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -151,6 +154,7 @@
 		31D5FDAB1BE079A70052B703 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				313C21121BFB21B1000E71F2 /* CoreLocation.framework */,
 				31D5FDA91BE0797A0052B703 /* Foundation.framework */,
 			);
 			name = Frameworks;

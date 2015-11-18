@@ -10,29 +10,38 @@
 static NSString * const kAPIHost           = @"api.yelp.com";
 static NSString * const kSearchPath        = @"/v2/search/";
 static NSString * const kBusinessPath      = @"/v2/business/";
-static NSString * const kSearchLimit       = @"15";
+static NSString * const kSearchLimit       = @"20";
 
 @implementation YPAPISample
 
 #pragma mark - Public
 
-- (void)queryTopBusinessInfoForTerm:(NSString *)term location:(NSString *)location completionHandler:(void (^)(NSDictionary *topBusinessJSON, NSError *error))completionHandler {
+- (void)queryTopBusinessInfoForTerm:(NSString *)term ll:(NSString *)ll radius_filter:(NSString *)radius_filter offset:(NSString *)offset completionHandler:(void (^)(NSArray *businessArray, NSError *error))completionHandler {
 
-  NSLog(@"Querying the Search API with term \'%@\' and location \'%@'", term, location);
+  NSLog(@"Querying the Search API with term \'%@\' and location \'%@'", term, ll);
 
   //Make a first request to get the search results with the passed term and location
-  NSURLRequest *searchRequest = [self _searchRequestWithTerm:term location:location];
+    NSURLRequest *searchRequest = [self _searchRequestWithTerm:term ll:ll radius_filter:radius_filter offset:offset];
   NSURLSession *session = [NSURLSession sharedSession];
   [[session dataTaskWithRequest:searchRequest completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
 
     NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
 
     if (!error && httpResponse.statusCode == 200) {
+        
+        
 
       NSDictionary *searchResponseJSON = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
         //NSLog(@"%@", searchResponseJSON);
       NSArray *businessArray = searchResponseJSON[@"businesses"];
-
+        //NSLog(@"Business array: %@", businessArray);
+        
+//        NSArray *keyArray =
+//        NSDictionary *tempDictionary = [businessArray initWithObjects:businessArray forKeys: ];
+//        NSLog(@"%@", tempDictionary);
+//        
+        
+        
       if ([businessArray count] > 0) {
           
         //NSLog(@"%@", businessArray);
@@ -40,8 +49,10 @@ static NSString * const kSearchLimit       = @"15";
         NSDictionary *firstBusiness = [businessArray firstObject];
         NSString *firstBusinessID = firstBusiness[@"id"];
         NSLog(@"%lu businesses found, querying business info for the top result: %@", (unsigned long)[businessArray count], firstBusinessID);
+        //NSDictionary *allBusiness = [businessArray ];
+        completionHandler( businessArray, error);
 
-        [self queryBusinessInfoForBusinessId:firstBusinessID completionHandler:completionHandler];
+        //[self queryBusinessInfoForBusinessId:firstBusinessID completionHandler:completionHandler];
       } else {
         completionHandler(nil, error); // No business was found
       }
@@ -51,23 +62,23 @@ static NSString * const kSearchLimit       = @"15";
   }] resume];
 }
 
-- (void)queryBusinessInfoForBusinessId:(NSString *)businessID completionHandler:(void (^)(NSDictionary *topBusinessJSON, NSError *error))completionHandler {
-
-  NSURLSession *session = [NSURLSession sharedSession];
-  NSURLRequest *businessInfoRequest = [self _businessInfoRequestForID:businessID];
-  [[session dataTaskWithRequest:businessInfoRequest completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-
-    NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
-    if (!error && httpResponse.statusCode == 200) {
-      NSDictionary *businessResponseJSON = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
-
-      completionHandler(businessResponseJSON, error);
-    } else {
-      completionHandler(nil, error);
-    }
-  }] resume];
-
-}
+//- (void)queryBusinessInfoForBusinessId:(NSString *)businessID completionHandler:(void (^)(NSDictionary *topBusinessJSON, NSError *error))completionHandler {
+//
+//  NSURLSession *session = [NSURLSession sharedSession];
+//  NSURLRequest *businessInfoRequest = [self _businessInfoRequestForID:businessID];
+//  [[session dataTaskWithRequest:businessInfoRequest completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+//
+//    NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
+//    if (!error && httpResponse.statusCode == 200) {
+//      NSDictionary *businessResponseJSON = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+//
+//      completionHandler(businessResponseJSON, error);
+//    } else {
+//      completionHandler(nil, error);
+//    }
+//  }] resume];
+//
+//}
 
 
 #pragma mark - API Request Builders
@@ -80,10 +91,12 @@ static NSString * const kSearchLimit       = @"15";
 
  @return The NSURLRequest needed to perform the search
  */
-- (NSURLRequest *)_searchRequestWithTerm:(NSString *)term location:(NSString *)location {
+- (NSURLRequest *)_searchRequestWithTerm:(NSString *)term ll:(NSString *)ll radius_filter:(NSString *)radius_filter offset:(NSString *)offset {
   NSDictionary *params = @{
                            @"term": term,
-                           @"location": location,
+                           @"ll": ll,
+                           @"radius_filter": radius_filter,
+                           @"offset": offset,
                            @"limit": kSearchLimit
                            };
 
