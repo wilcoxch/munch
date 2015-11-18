@@ -105,47 +105,6 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="highlightedColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="quU-ki-YE9">
-                                <rect key="frame" x="157" y="548" width="61" height="54"/>
-                                <animations/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Info">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="Info:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Khv-1x-pLt"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6hY-fn-7xZ">
-                                <rect key="frame" x="285" y="548" width="61" height="54"/>
-                                <animations/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <gestureRecognizers/>
-                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="List">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="4k6-cr-SKT" kind="show" id="Gz6-gO-BAw"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="44s-Dd-H0L">
-                                <rect key="frame" x="29" y="548" width="61" height="54"/>
-                                <animations/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="No">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="buttonNo:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="FhH-pw-sRv"/>
-                                    <segue destination="mcu-eG-eAh" kind="show" id="mLP-EB-RXE"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Settings.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="kWS-HE-QtS">
                                 <rect key="frame" x="21" y="10" width="46" height="47"/>
                                 <animations/>
@@ -161,7 +120,7 @@
                                 </connections>
                             </button>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AUe-HZ-bN1">
-                                <rect key="frame" x="0.0" y="65" width="375" height="431"/>
+                                <rect key="frame" x="0.0" y="65" width="375" height="602"/>
                                 <animations/>
                                 <connections>
                                     <segue destination="kQW-Ge-XWY" kind="embed" id="qIY-yy-0Zz"/>
@@ -172,7 +131,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <connections>
-                            <outletCollection property="gestureRecognizers" destination="SUK-bz-6jh" appends="YES" id="Wjo-hV-R2K"/>
+                            <outletCollection property="gestureRecognizers" destination="wrc-yQ-H8n" appends="YES" id="cOX-gO-stR"/>
                         </connections>
                     </view>
                     <toolbarItems/>
@@ -180,11 +139,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="left" id="SUK-bz-6jh">
-                    <connections>
-                        <segue destination="4k6-cr-SKT" kind="show" id="gAj-OR-9xg"/>
-                    </connections>
-                </swipeGestureRecognizer>
+                <screenEdgePanGestureRecognizer minimumNumberOfTouches="1" id="wrc-yQ-H8n"/>
             </objects>
             <point key="canvasLocation" x="294.5" y="422.5"/>
         </scene>
@@ -293,7 +248,7 @@
                         <viewControllerLayoutGuide type="bottom" id="kG4-5u-1Hx"/>
                     </layoutGuides>
                     <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="x7x-jN-OoV">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="431"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="602"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -302,7 +257,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uiw-LF-tpG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="513.5" y="1127.5"/>
+            <point key="canvasLocation" x="512.5" y="1210"/>
         </scene>
     </scenes>
     <resources>
@@ -310,6 +265,5 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Y3e-YX-J2W"/>
-        <segue reference="Gz6-gO-BAw"/>
     </inferredMetricsTieBreakers>
 </document>
