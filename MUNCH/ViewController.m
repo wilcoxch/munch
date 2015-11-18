@@ -6,26 +6,33 @@
 //  Copyright (c) 2015 Greybeards. All rights reserved.
 //
 
+#import <CoreLocation/CoreLocation.h>
+#import <Foundation/Foundation.h>
+
 #import "ViewController.h"
 #import "YPAPISample.h"
-#import <Foundation/Foundation.h>
 #import "DraggableViewBackground.h"
 
 
 
 @interface ViewController ()
 
-@property (strong, nonatomic) NSDictionary *APIdata;
+//@property (strong, nonatomic) NSDictionary *APIdata;
 
 @end
 
-@implementation ViewController
+@implementation ViewController {
 
+    NSDictionary *APIdata;
+}
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self YelpCall];
+    //NSLog(@"APIdata: %@", APIdata);
+
+    
 //    DraggableViewBackground *draggableBackground = [[DraggableViewBackground alloc]initWithFrame:self.view.frame];
 //    [self.view addSubview:draggableBackground];
     // Do any additional setup after loading the view, typically from a nib.
@@ -51,34 +58,37 @@
 
 
 - (void)YelpCall{
-        NSString *defaultTerm = @"pho";
-        NSString *defaultLocation = @"Rohnert Park, CA";
+        NSString *defaultTerm = @"mexican";
+        NSString *defaultll = @"38.3433588,-122.739119";
+        NSString *defaultRadius_filter = @"30000";
+        NSString *defaultOffset = @"0";
+    
+       // NSString *defaultLocation = @"Rohnert Park, CA";
         
         //Get the term and location from the command line if there were any, otherwise assign default values.
         NSString *term = [[NSUserDefaults standardUserDefaults] valueForKey:@"term"] ?: defaultTerm;
-        NSString *location = [[NSUserDefaults standardUserDefaults] valueForKey:@"location"] ?: defaultLocation;
-        
+        NSString *ll = [[NSUserDefaults standardUserDefaults] valueForKey:@"ll"] ?: defaultll;
+        NSString *radius_filter = [[NSUserDefaults standardUserDefaults] valueForKey:@"radius_filter"] ?: defaultRadius_filter;
+        NSString *offset = [[NSUserDefaults standardUserDefaults] valueForKey:@"offset"] ?: defaultOffset;
+
+    
         YPAPISample *APISample = [[YPAPISample alloc] init];
         
         dispatch_group_t requestGroup = dispatch_group_create();
         
         dispatch_group_enter(requestGroup);
-        [APISample queryTopBusinessInfoForTerm:term location:location completionHandler:^(NSDictionary *topBusinessJSON, NSError *error) {
+    [APISample queryTopBusinessInfoForTerm:term ll:ll radius_filter:radius_filter offset:offset completionHandler:^(NSDictionary *topBusinessJSON, NSError *error) {
             
             if (error) {
                 NSLog(@"An error happened during the request: %@", error);
             } else if (topBusinessJSON) {
-                NSLog(@"Top business info: \n %@", topBusinessJSON);
+                //NSLog(@"Top business info: \n %@", topBusinessJSON);
                 //NSLog(@"More stuff %@\n", [topBusinessJSON objectForKey:@"categories"]);
                 //NSLog(@"More stuff %lu\n", (unsigned long)[topBusinessJSON count]);
                 //_APIdata = [NSDictionary dictionaryWithDictionary:topBusinessJSON];
                 //NSLog(@"Top business info: \n %@", _APIdata);
-                _APIdata = topBusinessJSON;
-                [_APIdata retain];
-                
-//                dispatch_async(dispatch_get_main_queue(), ^{
-//                    [self.tableView reloadData];
-//                });
+                APIdata = topBusinessJSON;
+                [APIdata retain];
             } else {
                 NSLog(@"No business was found");
             }
