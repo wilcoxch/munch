@@ -23,13 +23,13 @@
 
 @implementation ViewController {
 
-    NSArray *APIdata;
+   NSMutableArray *APIdata;
 }
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self YelpCall];
+   [self YelpCall];
     NSLog(@"APIdata: %lu", (unsigned long)[APIdata count]);
 
     
@@ -79,7 +79,7 @@
         dispatch_group_t requestGroup = dispatch_group_create();
         
         dispatch_group_enter(requestGroup);
-    [APISample queryTopBusinessInfoForTerm:term ll:ll radius_filter:radius_filter offset:offset completionHandler:^(NSArray *topBusinessJSON, NSError *error) {
+    [APISample queryTopBusinessInfoForTerm:term ll:ll radius_filter:radius_filter offset:offset completionHandler:^(NSMutableArray *topBusinessJSON, NSError *error) {
             
             if (error) {
                 NSLog(@"An error happened during the request: %@", error);

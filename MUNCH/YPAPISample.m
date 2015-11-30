@@ -16,7 +16,7 @@ static NSString * const kSearchLimit       = @"20";
 
 #pragma mark - Public
 
-- (void)queryTopBusinessInfoForTerm:(NSString *)term ll:(NSString *)ll radius_filter:(NSString *)radius_filter offset:(NSString *)offset completionHandler:(void (^)(NSArray *businessArray, NSError *error))completionHandler {
+- (void)queryTopBusinessInfoForTerm:(NSString *)term ll:(NSString *)ll radius_filter:(NSString *)radius_filter offset:(NSString *)offset completionHandler:(void (^)(NSMutableArray *businessArray, NSError *error))completionHandler {
 
   NSLog(@"Querying the Search API with term \'%@\' and location \'%@'", term, ll);
 
@@ -33,7 +33,7 @@ static NSString * const kSearchLimit       = @"20";
 
       NSDictionary *searchResponseJSON = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
         //NSLog(@"%@", searchResponseJSON);
-      NSArray *businessArray = searchResponseJSON[@"businesses"];
+      NSMutableArray *businessArray = searchResponseJSON[@"businesses"];
         //NSLog(@"Business array: %@", businessArray);
         
 //        NSArray *keyArray =
@@ -61,6 +61,7 @@ static NSString * const kSearchLimit       = @"20";
     }
   }] resume];
 }
+
 
 //- (void)queryBusinessInfoForBusinessId:(NSString *)businessID completionHandler:(void (^)(NSDictionary *topBusinessJSON, NSError *error))completionHandler {
 //
