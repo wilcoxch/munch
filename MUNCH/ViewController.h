@@ -19,6 +19,6 @@
 
 @end
 
-CLLocationManager *locationManager;
+//CLLocationManager *locationManager;
 NSString *latitude;
 NSString *longitude;

@@ -7,6 +7,9 @@
 //
 
 #import "DraggableViewBackground.h"
+#import <Foundation/Foundation.h>
+
+#import "YPAPISample.h"
 
 @implementation DraggableViewBackground{
     NSInteger cardsLoadedIndex; //%%% the index of the card you have loaded into the loadedCards array last
@@ -34,7 +37,9 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
     if (self) {
         [super layoutSubviews];
         [self setupView];
-        exampleCardLabels = [[NSArray alloc]initWithObjects:@"first",@"second",@"third",@"fourth",@"last", nil]; //%%% placeholder for card-specific information
+        exampleCardLabels = [[NSArray alloc]initWithObjects:@"first",@"second",@"third",@"fourth",@"last", nil];//%%% placeholder for card-specific information
+        //exampleCardLabels  = [self YelpCall];
+        NSLog(@"%@", [self YelpCall]);
         loadedCards = [[NSMutableArray alloc] init];
         allCards = [[NSMutableArray alloc] init];
         cardsLoadedIndex = 0;
@@ -73,7 +78,9 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
 #warning this is where you change card size
 //    DraggableView *draggableView = [[DraggableView alloc]initWithFrame:CGRectMake((self.frame.size.width - CARD_WIDTH)/2, (self.frame.size.height - CARD_HEIGHT)/2, CARD_WIDTH, CARD_HEIGHT)];
     DraggableView *draggableView = [[DraggableView alloc]initWithFrame:CGRectMake((self.frame.size.width - CARD_WIDTH)/2, (self.frame.size.height)/30, CARD_WIDTH, CARD_HEIGHT)];
-    draggableView.information.text = [exampleCardLabels objectAtIndex:index]; //%%% placeholder for card-specific information
+    //NSLog(@"Another thing %@", [exampleCardLabels[index] objectForKey:@"name"]);
+    //draggableView.information.text = [exampleCardLabels[index] objectForKey:@"name"]; //%%% placeholder for card-specific information
+    draggableView.information.text = [exampleCardLabels objectAtIndex:index];
     draggableView.delegate = self;
     return draggableView;
 }
@@ -174,5 +181,53 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
     // Drawing code
 }
 */
+
+- ( NSMutableArray* )YelpCall{
+    NSString *defaultTerm = @"mexican";
+    NSString *defaultll = @"38.3433588,-122.739119";
+    NSString *defaultRadius_filter = @"30000";
+    NSString *defaultOffset = @"0";
+    
+    // NSString *defaultLocation = @"Rohnert Park, CA";
+    
+    //Get the term and location from the command line if there were any, otherwise assign default values.
+    NSString *term = [[NSUserDefaults standardUserDefaults] valueForKey:@"term"] ?: defaultTerm;
+    NSString *ll = [[NSUserDefaults standardUserDefaults] valueForKey:@"ll"] ?: defaultll;
+    NSString *radius_filter = [[NSUserDefaults standardUserDefaults] valueForKey:@"radius_filter"] ?: defaultRadius_filter;
+    NSString *offset = [[NSUserDefaults standardUserDefaults] valueForKey:@"offset"] ?: defaultOffset;
+    
+    __block NSMutableArray *data;// = [[NSMutableArray alloc] init];
+    YPAPISample *APISample = [[YPAPISample alloc] init];
+    
+    dispatch_group_t requestGroup = dispatch_group_create();
+    
+    dispatch_group_enter(requestGroup);
+    [APISample queryTopBusinessInfoForTerm:term ll:ll radius_filter:radius_filter offset:offset completionHandler:^(NSMutableArray *topBusinessJSON, NSError *error) {
+        
+        if (error) {
+            NSLog(@"An error happened during the request: %@", error);
+        } else if (topBusinessJSON) {
+            //NSLog(@"Top business info: \n %@", topBusinessJSON);
+            //NSLog(@"More stuff %@\n", [topBusinessJSON objectForKey:@"categories"]);
+            //NSLog(@"More stuff %lu\n", (unsigned long)[topBusinessJSON count]);
+            //_APIdata = [NSDictionary dictionaryWithDictionary:topBusinessJSON];
+            //NSLog(@"Top business info: \n %@", _APIdata);
+            data = [[NSMutableArray alloc] initWithArray:topBusinessJSON];
+//            [exampleCardLabels retain];
+//            for (int i = 0; i < [exampleCardLabels count]; ++i) {
+//                NSLog(@"Draggable: %@", [exampleCardLabels[i] objectForKey:@"id"]);
+//            }
+        } else {
+            NSLog(@"No business was found");
+        }
+        
+        dispatch_group_leave(requestGroup);
+    }];
+    
+    dispatch_group_wait(requestGroup, DISPATCH_TIME_FOREVER); // This avoids the program exiting before all our asynchronous callbacks have been made.
+    return data;
+}
+
+
 
 @end
