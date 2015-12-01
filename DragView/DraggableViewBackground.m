@@ -7,8 +7,8 @@
 //
 
 #import "DraggableViewBackground.h"
-#import <Foundation/Foundation.h>
 
+#import <Foundation/Foundation.h>`
 #import "YPAPISample.h"
 
 @implementation DraggableViewBackground{
@@ -19,6 +19,7 @@
     UIButton* messageButton;
     UIButton* checkButton;
     UIButton* xButton;
+    UIImage* containerImage;
 }
 //this makes it so only two cards are loaded at a time to
 //avoid performance and memory costs
@@ -37,9 +38,9 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
     if (self) {
         [super layoutSubviews];
         [self setupView];
-        exampleCardLabels = [[NSArray alloc]initWithObjects:@"first",@"second",@"third",@"fourth",@"last", nil];//%%% placeholder for card-specific information
-        //exampleCardLabels  = [self YelpCall];
-        NSLog(@"%@", [self YelpCall]);
+//        [self YelpCall];
+//        exampleCardLabels = [[NSArray alloc]initWithObjects:@"first",@"second",@"third",@"fourth",@"last", nil]; //%%% placeholder for card-specific information
+        exampleCardLabels = [[NSArray alloc] initWithArray:[self YelpCall]];
         loadedCards = [[NSMutableArray alloc] init];
         allCards = [[NSMutableArray alloc] init];
         cardsLoadedIndex = 0;
@@ -53,6 +54,7 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
 {
 #warning customize all of this.  These are just place holders to make it look pretty
     self.backgroundColor = [UIColor colorWithRed:.92 green:.93 blue:.95 alpha:1]; //the gray background colors
+
 //    menuButton = [[UIButton alloc]initWithFrame:CGRectMake(17, 34, 22, 15)];
 //    [menuButton setImage:[UIImage imageNamed:@"menuButton"] forState:UIControlStateNormal];
 //    messageButton = [[UIButton alloc]initWithFrame:CGRectMake(284, 34, 18, 18)];
@@ -75,13 +77,17 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
 // to get rid of it (eg: if you are building cards from data from the internet)
 -(DraggableView *)createDraggableViewWithDataAtIndex:(NSInteger)index
 {
-#warning this is where you change card size
-//    DraggableView *draggableView = [[DraggableView alloc]initWithFrame:CGRectMake((self.frame.size.width - CARD_WIDTH)/2, (self.frame.size.height - CARD_HEIGHT)/2, CARD_WIDTH, CARD_HEIGHT)];
+#warning this is where we are populating with API info
+
     DraggableView *draggableView = [[DraggableView alloc]initWithFrame:CGRectMake((self.frame.size.width - CARD_WIDTH)/2, (self.frame.size.height)/30, CARD_WIDTH, CARD_HEIGHT)];
-    //NSLog(@"Another thing %@", [exampleCardLabels[index] objectForKey:@"name"]);
-    //draggableView.information.text = [exampleCardLabels[index] objectForKey:@"name"]; //%%% placeholder for card-specific information
-    draggableView.information.text = [exampleCardLabels objectAtIndex:index];
+
+    //draggableView.information.text = [exampleCardLabels objectAtIndex:index]; //%%% placeholder for card-specific information
+    draggableView.information.text = [exampleCardLabels[index] objectForKey:@"name"];
     draggableView.delegate = self;
+
+//    DraggableView *containerImage = [[DraggableView alloc]initWithFrame:CGRectMake(60, 515, 300, 200)]; // 485, 59
+//    [DraggableView containerImage:[UIImage imageNamed:@"trollface_300x200@2x.png"] forState:UIControlStateNormal];
+
     return draggableView;
 }
 
@@ -202,7 +208,8 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
     dispatch_group_t requestGroup = dispatch_group_create();
     
     dispatch_group_enter(requestGroup);
-    [APISample queryTopBusinessInfoForTerm:term ll:ll radius_filter:radius_filter offset:offset completionHandler:^(NSMutableArray *topBusinessJSON, NSError *error) {
+
+    [APISample queryTopBusinessInfoForTerm:term ll:ll radius_filter:radius_filter offset:offset completionHandler:^(NSArray *topBusinessJSON, NSError *error) {
         
         if (error) {
             NSLog(@"An error happened during the request: %@", error);
@@ -213,10 +220,10 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
             //_APIdata = [NSDictionary dictionaryWithDictionary:topBusinessJSON];
             //NSLog(@"Top business info: \n %@", _APIdata);
             data = [[NSMutableArray alloc] initWithArray:topBusinessJSON];
-//            [exampleCardLabels retain];
-//            for (int i = 0; i < [exampleCardLabels count]; ++i) {
-//                NSLog(@"Draggable: %@", [exampleCardLabels[i] objectForKey:@"id"]);
-//            }
+            //            [exampleCardLabels retain];
+            //            for (int i = 0; i < [exampleCardLabels count]; ++i) {
+            //                NSLog(@"Draggable: %@", [exampleCardLabels[i] objectForKey:@"id"]);
+            //            }
         } else {
             NSLog(@"No business was found");
         }
@@ -227,7 +234,5 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
     dispatch_group_wait(requestGroup, DISPATCH_TIME_FOREVER); // This avoids the program exiting before all our asynchronous callbacks have been made.
     return data;
 }
-
-
 
 @end

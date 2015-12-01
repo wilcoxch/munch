@@ -10,16 +10,18 @@
 #define MUNCH_Restaurant_h
 #import <UIKit/UIKit.h>
 
+
 @interface Restaurant : NSObject{
     
 }
 
-@property NSString *Name;
+
+@property (weak,nonatomic) NSString *Name;
 @property double *Distance;
 @property NSInteger *Rating;
-@property NSString *Description;
-@property NSString *Address;
-@property NSString *ImgUrl;
+@property (weak,nonatomic) NSString *Description;
+@property (weak,nonatomic) NSString *Address;
+@property (weak,nonatomic) NSString *ImgUrl;
 
 @end
 
