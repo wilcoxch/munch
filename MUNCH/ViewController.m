@@ -23,13 +23,12 @@
 
 @implementation ViewController {
 
-   NSMutableArray *APIdata;
+    NSArray *APIdata;
 }
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
 //    [self YelpCall];
 //    NSLog(@"APIdata: %lu", (unsigned long)[APIdata count]);
 
@@ -60,7 +59,6 @@
 }
 
 
-
 //- (void)YelpCall{
 //        NSString *defaultTerm = @"japanese";
 //        NSString *defaultll = @"38.3433588,-122.739119";
@@ -81,7 +79,6 @@
 //        dispatch_group_t requestGroup = dispatch_group_create();
 //        
 //        dispatch_group_enter(requestGroup);
-
 //    [APISample queryTopBusinessInfoForTerm:term ll:ll radius_filter:radius_filter offset:offset completionHandler:^(NSArray *topBusinessJSON, NSError *error) {
 //            
 //            if (error) {

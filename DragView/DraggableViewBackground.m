@@ -7,8 +7,7 @@
 //
 
 #import "DraggableViewBackground.h"
-
-#import <Foundation/Foundation.h>`
+#import <Foundation/Foundation.h>
 #import "YPAPISample.h"
 
 @implementation DraggableViewBackground{
@@ -80,7 +79,6 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
 #warning this is where we are populating with API info
 
     DraggableView *draggableView = [[DraggableView alloc]initWithFrame:CGRectMake((self.frame.size.width - CARD_WIDTH)/2, (self.frame.size.height)/30, CARD_WIDTH, CARD_HEIGHT)];
-
     //draggableView.information.text = [exampleCardLabels objectAtIndex:index]; //%%% placeholder for card-specific information
     draggableView.information.text = [exampleCardLabels[index] objectForKey:@"name"];
     draggableView.delegate = self;
@@ -208,7 +206,6 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
     dispatch_group_t requestGroup = dispatch_group_create();
     
     dispatch_group_enter(requestGroup);
-
     [APISample queryTopBusinessInfoForTerm:term ll:ll radius_filter:radius_filter offset:offset completionHandler:^(NSArray *topBusinessJSON, NSError *error) {
         
         if (error) {

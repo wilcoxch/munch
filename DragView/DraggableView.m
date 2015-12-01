@@ -29,7 +29,7 @@
 @synthesize information;
 @synthesize overlayView;
 
-- (id)initWithFrame:(CGRect)frame APIdata:(NSArray*)APIdata
+- (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
