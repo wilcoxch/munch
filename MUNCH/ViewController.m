@@ -29,8 +29,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-   //[self YelpCall];
-   // NSLog(@"APIdata: %lu", (unsigned long)[APIdata count]);
+
+//    [self YelpCall];
+//    NSLog(@"APIdata: %lu", (unsigned long)[APIdata count]);
 
     
 //    DraggableViewBackground *draggableBackground = [[DraggableViewBackground alloc]initWithFrame:self.view.frame];
@@ -58,9 +59,10 @@
     // Dispose of any resources that can be recreated.
 }
 
-//
+
+
 //- (void)YelpCall{
-//        NSString *defaultTerm = @"mexican";
+//        NSString *defaultTerm = @"japanese";
 //        NSString *defaultll = @"38.3433588,-122.739119";
 //        NSString *defaultRadius_filter = @"30000";
 //        NSString *defaultOffset = @"0";
@@ -79,7 +81,8 @@
 //        dispatch_group_t requestGroup = dispatch_group_create();
 //        
 //        dispatch_group_enter(requestGroup);
-//    [APISample queryTopBusinessInfoForTerm:term ll:ll radius_filter:radius_filter offset:offset completionHandler:^(NSMutableArray *topBusinessJSON, NSError *error) {
+
+//    [APISample queryTopBusinessInfoForTerm:term ll:ll radius_filter:radius_filter offset:offset completionHandler:^(NSArray *topBusinessJSON, NSError *error) {
 //            
 //            if (error) {
 //                NSLog(@"An error happened during the request: %@", error);
