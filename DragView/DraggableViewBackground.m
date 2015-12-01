@@ -39,7 +39,7 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
         [self setupView];
 //        [self YelpCall];
 //        exampleCardLabels = [[NSArray alloc]initWithObjects:@"first",@"second",@"third",@"fourth",@"last", nil]; //%%% placeholder for card-specific information
-        exampleCardLabels = [self YelpCall];
+        exampleCardLabels = [[NSArray alloc] initWithArray:[self YelpCall]];
         loadedCards = [[NSMutableArray alloc] init];
         allCards = [[NSMutableArray alloc] init];
         cardsLoadedIndex = 0;
@@ -79,7 +79,8 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
 #warning this is where we are populating with API info
 
     DraggableView *draggableView = [[DraggableView alloc]initWithFrame:CGRectMake((self.frame.size.width - CARD_WIDTH)/2, (self.frame.size.height)/30, CARD_WIDTH, CARD_HEIGHT)];
-    draggableView.information.text = [exampleCardLabels objectAtIndex:index]; //%%% placeholder for card-specific information
+    //draggableView.information.text = [exampleCardLabels objectAtIndex:index]; //%%% placeholder for card-specific information
+    draggableView.information.text = [exampleCardLabels[index] objectForKey:@"name"];
     draggableView.delegate = self;
 
 //    DraggableView *containerImage = [[DraggableView alloc]initWithFrame:CGRectMake(60, 515, 300, 200)]; // 485, 59
