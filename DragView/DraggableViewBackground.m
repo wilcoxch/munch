@@ -193,7 +193,7 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
     NSString *defaultTerm = @"food";
     NSString *defaultll = @"38.3433588,-122.739119";
     NSString *defaultRadius_filter = @"30000";
-    NSString *defaultOffset = @"20";
+    NSString *defaultOffset = @"0";
     
     // NSString *defaultLocation = @"Rohnert Park, CA";
     
