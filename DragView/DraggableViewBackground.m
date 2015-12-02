@@ -81,11 +81,14 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
     DraggableView *draggableView = [[DraggableView alloc]initWithFrame:CGRectMake((self.frame.size.width - CARD_WIDTH)/2, (self.frame.size.height)/30, CARD_WIDTH, CARD_HEIGHT)];
     //draggableView.information.text = [exampleCardLabels objectAtIndex:index]; //%%% placeholder for card-specific information
     draggableView.information.text = [exampleCardLabels[index] objectForKey:@"name"];
+    NSString *urlString = [exampleCardLabels[index] objectForKey:@"image_url"];
+    NSString *urlRating = [exampleCardLabels[index] objectForKey:@"rating_img_url"];
+    UIImage *img = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:urlString]]];
+    UIImage *rateimg = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:urlRating]]];
+    draggableView.picture.image = img;
+    draggableView.rating.image = rateimg;
     draggableView.delegate = self;
-
-//    DraggableView *containerImage = [[DraggableView alloc]initWithFrame:CGRectMake(60, 515, 300, 200)]; // 485, 59
-//    [DraggableView containerImage:[UIImage imageNamed:@"trollface_300x200@2x.png"] forState:UIControlStateNormal];
-
+    
     return draggableView;
 }
 
@@ -187,10 +190,10 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
 */
 
 - ( NSMutableArray* )YelpCall{
-    NSString *defaultTerm = @"mexican";
+    NSString *defaultTerm = @"food";
     NSString *defaultll = @"38.3433588,-122.739119";
     NSString *defaultRadius_filter = @"30000";
-    NSString *defaultOffset = @"0";
+    NSString *defaultOffset = @"20";
     
     // NSString *defaultLocation = @"Rohnert Park, CA";
     
@@ -211,7 +214,7 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
         if (error) {
             NSLog(@"An error happened during the request: %@", error);
         } else if (topBusinessJSON) {
-            //NSLog(@"Top business info: \n %@", topBusinessJSON);
+            NSLog(@"Top business info: \n %@", topBusinessJSON);
             //NSLog(@"More stuff %@\n", [topBusinessJSON objectForKey:@"categories"]);
             //NSLog(@"More stuff %lu\n", (unsigned long)[topBusinessJSON count]);
             //_APIdata = [NSDictionary dictionaryWithDictionary:topBusinessJSON];

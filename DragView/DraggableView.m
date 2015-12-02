@@ -24,7 +24,8 @@
 
 //delegate is instance of ViewController
 @synthesize delegate;
-
+@synthesize picture;
+@synthesize rating;
 @synthesize panGestureRecognizer;
 @synthesize information;
 @synthesize overlayView;
@@ -40,6 +41,11 @@
         information.text = @"no info given";
         [information setTextAlignment:NSTextAlignmentCenter];
         information.textColor = [UIColor blackColor];
+        picture = [[UIImageView alloc] initWithFrame:CGRectMake(100, 100, 200, 200)];
+        [picture setCenter: CGPointMake(self.frame.size.width/2, self.frame.size.height/2)];
+        picture.tintColor = [UIColor grayColor];
+        rating = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 166, 30)];
+        [rating setCenter: CGPointMake(self.frame.size.width/2, (self.frame.size.height/5)*4)];
         
         self.backgroundColor = [UIColor whiteColor];
 #warning placeholder stuff, replace with card-specific information }
@@ -50,6 +56,8 @@
         
         [self addGestureRecognizer:panGestureRecognizer];
         [self addSubview:information];
+        [self addSubview:picture];
+        [self addSubview:rating];
         
         overlayView = [[OverlayView alloc]initWithFrame:CGRectMake(self.frame.size.width/2-100, 0, 100, 100)];
         overlayView.alpha = 0;
