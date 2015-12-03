@@ -7,10 +7,11 @@
 //
 
 #import "DraggableViewBackground.h"
-#import <Foundation/Foundation.h>
+//#import <Foundation/Foundation.h>
 #import "YPAPISample.h"
 
 @implementation DraggableViewBackground{
+    NSInteger offsetIndex;
     NSInteger cardsLoadedIndex; //%%% the index of the card you have loaded into the loadedCards array last
     NSMutableArray *loadedCards; //%%% the array of card loaded (change max_buffer_size to increase or decrease the number of cards this holds)
     
@@ -39,7 +40,8 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
         [self setupView];
 //        [self YelpCall];
 //        exampleCardLabels = [[NSArray alloc]initWithObjects:@"first",@"second",@"third",@"fourth",@"last", nil]; //%%% placeholder for card-specific information
-        exampleCardLabels = [[NSArray alloc] initWithArray:[self YelpCall]];
+        YPAPISample *dataArray = [[YPAPISample alloc] init];
+        exampleCardLabels = [[NSArray alloc] initWithArray:[dataArray YelpCall:@"0"]];
         loadedCards = [[NSMutableArray alloc] init];
         allCards = [[NSMutableArray alloc] init];
         cardsLoadedIndex = 0;
@@ -96,7 +98,7 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
 -(void)loadCards
 {
     if([exampleCardLabels count] > 0) {
-        NSInteger numLoadedCardsCap =(([exampleCardLabels count] > MAX_BUFFER_SIZE)?MAX_BUFFER_SIZE:[exampleCardLabels count]);
+        NSInteger numLoadedCardsCap = (([exampleCardLabels count] > MAX_BUFFER_SIZE)?MAX_BUFFER_SIZE:[exampleCardLabels count]);
         //%%% if the buffer size is greater than the data size, there will be an array error, so this makes sure that doesn't happen
         
         //%%% loops through the exampleCardsLabels array to create a card for each label.  This should be customized by removing "exampleCardLabels" with your own array of data
@@ -120,6 +122,7 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
             }
             cardsLoadedIndex++; //%%% we loaded a card into loaded cards, so we have to increment
         }
+//        exampleCardLabels = [[[YPAPISample alloc] init] YelpCall:[NSString stringWithFormat:@"%lu",(unsigned long)[exampleCardLabels count]]];
     }
 }
 
@@ -131,8 +134,14 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
     //do whatever you want with the card that was swiped
     //    DraggableView *c = (DraggableView *)card;
     
-    [loadedCards removeObjectAtIndex:0]; //%%% card was swiped, so it's no longer a "loaded card"
+
     
+    [loadedCards removeObjectAtIndex:0]; //%%% card was swiped, so it's no longer a "loaded card"
+//    if (cardsLoadedIndex >= [allCards count]-5){
+//        //[allCards addObjectsFromArray:[[[YPAPISample alloc] init] YelpCall:[NSString stringWithFormat:@"%li",(long)cardsLoadedIndex]]];
+//         exampleCardLabels = [[[YPAPISample alloc] init] YelpCall:[NSString stringWithFormat:@"%li",(long)cardsLoadedIndex]];
+//        [self loadCards];
+//    }
     if (cardsLoadedIndex < [allCards count]) { //%%% if we haven't reached the end of all cards, put another into the loaded cards
         [loadedCards addObject:[allCards objectAtIndex:cardsLoadedIndex]];
         cardsLoadedIndex++;//%%% loaded a card, so have to increment count
@@ -149,7 +158,18 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
     //    DraggableView *c = (DraggableView *)card;
     
     [loadedCards removeObjectAtIndex:0]; //%%% card was swiped, so it's no longer a "loaded card"
-    
+//    if (cardsLoadedIndex >= [allCards count]-5){
+//        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+//            // No explicit autorelease pool needed here.
+//            // The code runs in background, not strangling
+//            // the main run loop.
+//            exampleCardLabels = [[[YPAPISample alloc] init] YelpCall:[NSString stringWithFormat:@"%li",(long)cardsLoadedIndex]];
+//            [self loadCards];
+//        });
+        //[allCards addObjectsFromArray:[[[YPAPISample alloc] init] YelpCall:[NSString stringWithFormat:@"%li",(long)cardsLoadedIndex]]];
+//        exampleCardLabels = [[[YPAPISample alloc] init] YelpCall:[NSString stringWithFormat:@"%li",(long)cardsLoadedIndex]];
+//        [self loadCards];
+//    }
     if (cardsLoadedIndex < [allCards count]) { //%%% if we haven't reached the end of all cards, put another into the loaded cards
         [loadedCards addObject:[allCards objectAtIndex:cardsLoadedIndex]];
         cardsLoadedIndex++;//%%% loaded a card, so have to increment count
@@ -180,6 +200,12 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
     [dragView leftClickAction];
 }
 
+
+-(void)getMoreCards
+{
+    exampleCardLabels = [[[YPAPISample alloc] init] YelpCall:[NSString stringWithFormat:@"%lu",(unsigned long)[exampleCardLabels count]]];
+    
+}
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
@@ -189,50 +215,5 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
 }
 */
 
-- ( NSMutableArray* )YelpCall{
-    NSString *defaultTerm = @"food";
-    NSString *defaultll = @"38.3433588,-122.739119";
-    NSString *defaultRadius_filter = @"30000";
-    NSString *defaultOffset = @"0";
-    
-    // NSString *defaultLocation = @"Rohnert Park, CA";
-    
-    //Get the term and location from the command line if there were any, otherwise assign default values.
-    NSString *term = [[NSUserDefaults standardUserDefaults] valueForKey:@"term"] ?: defaultTerm;
-    NSString *ll = [[NSUserDefaults standardUserDefaults] valueForKey:@"ll"] ?: defaultll;
-    NSString *radius_filter = [[NSUserDefaults standardUserDefaults] valueForKey:@"radius_filter"] ?: defaultRadius_filter;
-    NSString *offset = [[NSUserDefaults standardUserDefaults] valueForKey:@"offset"] ?: defaultOffset;
-    
-    __block NSMutableArray *data;// = [[NSMutableArray alloc] init];
-    YPAPISample *APISample = [[YPAPISample alloc] init];
-    
-    dispatch_group_t requestGroup = dispatch_group_create();
-    
-    dispatch_group_enter(requestGroup);
-    [APISample queryTopBusinessInfoForTerm:term ll:ll radius_filter:radius_filter offset:offset completionHandler:^(NSArray *topBusinessJSON, NSError *error) {
-        
-        if (error) {
-            NSLog(@"An error happened during the request: %@", error);
-        } else if (topBusinessJSON) {
-            NSLog(@"Top business info: \n %@", topBusinessJSON);
-            //NSLog(@"More stuff %@\n", [topBusinessJSON objectForKey:@"categories"]);
-            //NSLog(@"More stuff %lu\n", (unsigned long)[topBusinessJSON count]);
-            //_APIdata = [NSDictionary dictionaryWithDictionary:topBusinessJSON];
-            //NSLog(@"Top business info: \n %@", _APIdata);
-            data = [[NSMutableArray alloc] initWithArray:topBusinessJSON];
-            //            [exampleCardLabels retain];
-            //            for (int i = 0; i < [exampleCardLabels count]; ++i) {
-            //                NSLog(@"Draggable: %@", [exampleCardLabels[i] objectForKey:@"id"]);
-            //            }
-        } else {
-            NSLog(@"No business was found");
-        }
-        
-        dispatch_group_leave(requestGroup);
-    }];
-    
-    dispatch_group_wait(requestGroup, DISPATCH_TIME_FOREVER); // This avoids the program exiting before all our asynchronous callbacks have been made.
-    return data;
-}
 
 @end

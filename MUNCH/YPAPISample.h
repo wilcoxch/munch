@@ -18,6 +18,11 @@
  */
 @interface YPAPISample : NSObject
 
+@property (nonatomic, strong) NSString *defaultTerm;
+@property (nonatomic, strong) NSString *defaultll;
+@property (nonatomic, strong) NSString *defaultRadius_filter;
+@property (nonatomic, strong) NSString *defaultOffset;
+
 /**
  Query the Yelp API with a given term and location and displays the progress in the log
  
@@ -26,5 +31,5 @@
  */
 - (void)queryTopBusinessInfoForTerm:(NSString *)term ll:(NSString *)ll radius_filter:(NSString *)radius_filter offset:(NSString *)offset completionHandler:(void (^)(NSArray *businessArray, NSError *error))completionHandler;
 
-
+- ( NSArray* )YelpCall:(NSString *)offsetNum;
 @end
