@@ -134,14 +134,14 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
     //do whatever you want with the card that was swiped
     //    DraggableView *c = (DraggableView *)card;
     
-#warning working right here!!
+
     
     [loadedCards removeObjectAtIndex:0]; //%%% card was swiped, so it's no longer a "loaded card"
-    if (cardsLoadedIndex >= [allCards count]/2){
-        //[allCards addObjectsFromArray:[[[YPAPISample alloc] init] YelpCall:[NSString stringWithFormat:@"%li",(long)cardsLoadedIndex]]];
-         exampleCardLabels = [[[YPAPISample alloc] init] YelpCall:[NSString stringWithFormat:@"%li",(long)cardsLoadedIndex]];
-        [self loadCards];
-    }
+//    if (cardsLoadedIndex >= [allCards count]-5){
+//        //[allCards addObjectsFromArray:[[[YPAPISample alloc] init] YelpCall:[NSString stringWithFormat:@"%li",(long)cardsLoadedIndex]]];
+//         exampleCardLabels = [[[YPAPISample alloc] init] YelpCall:[NSString stringWithFormat:@"%li",(long)cardsLoadedIndex]];
+//        [self loadCards];
+//    }
     if (cardsLoadedIndex < [allCards count]) { //%%% if we haven't reached the end of all cards, put another into the loaded cards
         [loadedCards addObject:[allCards objectAtIndex:cardsLoadedIndex]];
         cardsLoadedIndex++;//%%% loaded a card, so have to increment count
@@ -158,18 +158,18 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
     //    DraggableView *c = (DraggableView *)card;
     
     [loadedCards removeObjectAtIndex:0]; //%%% card was swiped, so it's no longer a "loaded card"
-    if (cardsLoadedIndex >= [allCards count]/2){
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            // No explicit autorelease pool needed here.
-            // The code runs in background, not strangling
-            // the main run loop.
-            exampleCardLabels = [[[YPAPISample alloc] init] YelpCall:[NSString stringWithFormat:@"%li",(long)cardsLoadedIndex]];
-            [self loadCards];
-        });
+//    if (cardsLoadedIndex >= [allCards count]-5){
+//        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+//            // No explicit autorelease pool needed here.
+//            // The code runs in background, not strangling
+//            // the main run loop.
+//            exampleCardLabels = [[[YPAPISample alloc] init] YelpCall:[NSString stringWithFormat:@"%li",(long)cardsLoadedIndex]];
+//            [self loadCards];
+//        });
         //[allCards addObjectsFromArray:[[[YPAPISample alloc] init] YelpCall:[NSString stringWithFormat:@"%li",(long)cardsLoadedIndex]]];
 //        exampleCardLabels = [[[YPAPISample alloc] init] YelpCall:[NSString stringWithFormat:@"%li",(long)cardsLoadedIndex]];
 //        [self loadCards];
-    }
+//    }
     if (cardsLoadedIndex < [allCards count]) { //%%% if we haven't reached the end of all cards, put another into the loaded cards
         [loadedCards addObject:[allCards objectAtIndex:cardsLoadedIndex]];
         cardsLoadedIndex++;//%%% loaded a card, so have to increment count
