@@ -51,9 +51,9 @@ static NSString * const kSearchLimit       = @"20";
           
         //NSLog(@"%@", businessArray);
           
-        NSDictionary *firstBusiness = [businessArray firstObject];
-        NSString *firstBusinessID = firstBusiness[@"id"];
-        NSLog(@"%lu businesses found, querying business info for the top result: %@", (unsigned long)[businessArray count], firstBusinessID);
+        //NSDictionary *firstBusiness = [businessArray firstObject];
+        //NSString *firstBusinessID = firstBusiness[@"id"];
+        NSLog(@"%lu businesses found, offset: %@", (unsigned long)[businessArray count], offset);
         //NSDictionary *allBusiness = [businessArray ];
         completionHandler( businessArray, error);
 
@@ -151,16 +151,16 @@ static NSString * const kSearchLimit       = @"20";
         if (error) {
             NSLog(@"An error happened during the request: %@", error);
         } else if (topBusinessJSON) {
-            NSLog(@"Top business info: \n %@", topBusinessJSON);
-            //NSLog(@"More stuff %@\n", [topBusinessJSON objectForKey:@"categories"]);
+            //NSLog(@"Top business info: \n %@", topBusinessJSON);
+            //NSLog(@"More stuff %@\n", [topBusinessJSON :@"Name"]);
             //NSLog(@"More stuff %lu\n", (unsigned long)[topBusinessJSON count]);
             //_APIdata = [NSDictionary dictionaryWithDictionary:topBusinessJSON];
             //NSLog(@"Top business info: \n %@", _APIdata);
             data = [[NSMutableArray alloc] initWithArray:topBusinessJSON];
             //            [exampleCardLabels retain];
-            //            for (int i = 0; i < [exampleCardLabels count]; ++i) {
-            //                NSLog(@"Draggable: %@", [exampleCardLabels[i] objectForKey:@"id"]);
-            //            }
+                        for (int i = 0; i < [data count]; ++i) {
+                            NSLog(@"Draggable: %@", [data[i] objectForKey:@"name"]);
+                        }
         } else {
             NSLog(@"No business was found");
         }

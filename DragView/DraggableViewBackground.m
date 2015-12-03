@@ -122,7 +122,6 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
             }
             cardsLoadedIndex++; //%%% we loaded a card into loaded cards, so we have to increment
         }
-//        exampleCardLabels = [[[YPAPISample alloc] init] YelpCall:[NSString stringWithFormat:@"%lu",(unsigned long)[exampleCardLabels count]]];
     }
 }
 
@@ -137,16 +136,25 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
 
     
     [loadedCards removeObjectAtIndex:0]; //%%% card was swiped, so it's no longer a "loaded card"
-//    if (cardsLoadedIndex >= [allCards count]-5){
-//        //[allCards addObjectsFromArray:[[[YPAPISample alloc] init] YelpCall:[NSString stringWithFormat:@"%li",(long)cardsLoadedIndex]]];
-//         exampleCardLabels = [[[YPAPISample alloc] init] YelpCall:[NSString stringWithFormat:@"%li",(long)cardsLoadedIndex]];
-//        [self loadCards];
-//    }
+
+        
     if (cardsLoadedIndex < [allCards count]) { //%%% if we haven't reached the end of all cards, put another into the loaded cards
         [loadedCards addObject:[allCards objectAtIndex:cardsLoadedIndex]];
         cardsLoadedIndex++;//%%% loaded a card, so have to increment count
         [self insertSubview:[loadedCards objectAtIndex:(MAX_BUFFER_SIZE-1)] belowSubview:[loadedCards objectAtIndex:(MAX_BUFFER_SIZE-2)]];
+        if (cardsLoadedIndex >= [exampleCardLabels count]) {
+            DraggableView* newCard = [self createDraggableViewWithDataAtIndex:cardsLoadedIndex%[exampleCardLabels count]];
+            [allCards addObject:newCard];
+        }
+        
     }
+    
+    if ((cardsLoadedIndex) != 0 && (cardsLoadedIndex)%[exampleCardLabels count] == 0){
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            exampleCardLabels = [[[YPAPISample alloc] init] YelpCall:[NSString stringWithFormat:@"%li",(long)cardsLoadedIndex]];
+        });
+    }
+
 }
 
 #warning include own action here!
@@ -158,24 +166,23 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
     //    DraggableView *c = (DraggableView *)card;
     
     [loadedCards removeObjectAtIndex:0]; //%%% card was swiped, so it's no longer a "loaded card"
-//    if (cardsLoadedIndex >= [allCards count]-5){
-//        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-//            // No explicit autorelease pool needed here.
-//            // The code runs in background, not strangling
-//            // the main run loop.
-//            exampleCardLabels = [[[YPAPISample alloc] init] YelpCall:[NSString stringWithFormat:@"%li",(long)cardsLoadedIndex]];
-//            [self loadCards];
-//        });
-        //[allCards addObjectsFromArray:[[[YPAPISample alloc] init] YelpCall:[NSString stringWithFormat:@"%li",(long)cardsLoadedIndex]]];
-//        exampleCardLabels = [[[YPAPISample alloc] init] YelpCall:[NSString stringWithFormat:@"%li",(long)cardsLoadedIndex]];
-//        [self loadCards];
-//    }
+    
     if (cardsLoadedIndex < [allCards count]) { //%%% if we haven't reached the end of all cards, put another into the loaded cards
         [loadedCards addObject:[allCards objectAtIndex:cardsLoadedIndex]];
         cardsLoadedIndex++;//%%% loaded a card, so have to increment count
         [self insertSubview:[loadedCards objectAtIndex:(MAX_BUFFER_SIZE-1)] belowSubview:[loadedCards objectAtIndex:(MAX_BUFFER_SIZE-2)]];
+        if (cardsLoadedIndex >= [exampleCardLabels count]) {
+            DraggableView* newCard = [self createDraggableViewWithDataAtIndex:cardsLoadedIndex%[exampleCardLabels count]];
+            [allCards addObject:newCard];
+        }
+        
     }
-
+    
+    if ((cardsLoadedIndex) != 0 && (cardsLoadedIndex)%[exampleCardLabels count] == 0){
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            exampleCardLabels = [[[YPAPISample alloc] init] YelpCall:[NSString stringWithFormat:@"%li",(long)cardsLoadedIndex+1]];
+        });
+    }
 }
 
 //%%% when you hit the right button, this is called and substitutes the swipe
@@ -201,11 +208,6 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
 }
 
 
--(void)getMoreCards
-{
-    exampleCardLabels = [[[YPAPISample alloc] init] YelpCall:[NSString stringWithFormat:@"%lu",(unsigned long)[exampleCardLabels count]]];
-    
-}
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
