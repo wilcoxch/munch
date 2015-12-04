@@ -83,11 +83,16 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
     DraggableView *draggableView = [[DraggableView alloc]initWithFrame:CGRectMake((self.frame.size.width - CARD_WIDTH)/2, (self.frame.size.height)/30, CARD_WIDTH, CARD_HEIGHT)];
     //draggableView.information.text = [exampleCardLabels objectAtIndex:index]; //%%% placeholder for card-specific information
     draggableView.information.text = [exampleCardLabels[index] objectForKey:@"name"];
+    draggableView.review_text.text = [exampleCardLabels[index] objectForKey:@"snippet_text"];
+    draggableView.phone_number.text = [exampleCardLabels[index] objectForKey:@"display_phone"];
     NSString *urlString = [exampleCardLabels[index] objectForKey:@"image_url"];
+    NSString *urlReviewString = [exampleCardLabels[index] objectForKey:@"snippet_image_url"];
     NSString *urlRating = [exampleCardLabels[index] objectForKey:@"rating_img_url_large"];
     UIImage *img = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:urlString]]];
+    UIImage *ratingimg = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:urlReviewString]]];
     UIImage *rateimg = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:urlRating]]];
     draggableView.picture.image = img;
+    draggableView.review_image.image = ratingimg;
     draggableView.rating.image = rateimg;
     draggableView.delegate = self;
     

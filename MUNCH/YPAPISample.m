@@ -161,6 +161,7 @@ static NSString * const kSearchLimit       = @"20";
             //            [exampleCardLabels retain];
                         for (int i = 0; i < [data count]; ++i) {
                             NSLog(@"Draggable: %@", [data[i] objectForKey:@"name"]);
+                            NSLog(@"Draggable: %@", [data[i] objectForKey:@"name"]);
                         }
         } else {
             NSLog(@"No business was found");

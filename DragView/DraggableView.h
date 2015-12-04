@@ -49,6 +49,9 @@
 @property (nonatomic)CGPoint originalPoint;
 @property (nonatomic,strong)OverlayView* overlayView;
 @property (nonatomic,strong)UILabel* information; //%%% a placeholder for any card-specific information
+@property (nonatomic,strong)UILabel* review_text;
+@property (nonatomic,strong)UILabel* phone_number;
+@property (nonatomic,strong)UIImageView* review_image;
 @property (nonatomic,strong)UIImageView* picture;
 @property (nonatomic,strong)UIImageView* rating;
 

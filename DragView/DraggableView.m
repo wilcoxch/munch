@@ -28,7 +28,10 @@
 @synthesize rating;
 @synthesize panGestureRecognizer;
 @synthesize information;
+@synthesize review_text;
+@synthesize phone_number;
 @synthesize overlayView;
+@synthesize review_image;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -37,15 +40,26 @@
         [self setupView];
         
 #warning placeholder stuff, replace with card-specific information {
-        information = [[UILabel alloc]initWithFrame:CGRectMake(0, 50, self.frame.size.width, 100)];
+        information = [[UILabel alloc]initWithFrame:CGRectMake(0, 50, self.frame.size.width, 175)];
         information.text = @"no info given";
         [information setTextAlignment:NSTextAlignmentCenter];
         information.textColor = [UIColor blackColor];
-        picture = [[UIImageView alloc] initWithFrame:CGRectMake(100, 100, 200, 200)];
-        [picture setCenter: CGPointMake(self.frame.size.width/2, self.frame.size.height/2)];
+        review_text = [[UILabel alloc]initWithFrame:CGRectMake(0, 50, self.frame.size.width, 500)];
+        review_text.text = @"no info given";
+        [review_text setTextAlignment:NSTextAlignmentCenter];
+        review_text.textColor = [UIColor blackColor];
+        phone_number = [[UILabel alloc]initWithFrame:CGRectMake(0, 50, self.frame.size.width, 250)];
+        phone_number.text = @"no info given";
+        [phone_number setTextAlignment:NSTextAlignmentCenter];
+        phone_number.textColor = [UIColor blackColor];
+        picture = [[UIImageView alloc] initWithFrame:CGRectMake(0  , 0, 100, 100)];
+        [picture setCenter: CGPointMake(self.frame.size.width/6, self.frame.size.height/8)];
         picture.tintColor = [UIColor grayColor];
-        rating = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 166, 30)];
-        [rating setCenter: CGPointMake(self.frame.size.width/2, (self.frame.size.height/5)*4)];
+        rating = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 200, 40)];
+        [rating setCenter: CGPointMake(self.frame.size.width/1.5, 25)];
+        review_image = [[UIImageView alloc] initWithFrame:CGRectMake(0  , self.frame.size.height, 80, 80)];
+        [review_image setCenter: CGPointMake(self.frame.size.width/6, self.frame.size.height/8)];
+        review_image.tintColor = [UIColor grayColor];
         
         self.backgroundColor = [UIColor whiteColor];
 #warning placeholder stuff, replace with card-specific information }
@@ -58,6 +72,9 @@
         [self addSubview:information];
         [self addSubview:picture];
         [self addSubview:rating];
+        [self addSubview:review_text];
+        [self addSubview:phone_number];
+//        [self addSubview:review_image];
         
         overlayView = [[OverlayView alloc]initWithFrame:CGRectMake(self.frame.size.width/2-100, 0, 100, 100)];
         overlayView.alpha = 0;
