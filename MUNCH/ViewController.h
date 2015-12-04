@@ -10,14 +10,20 @@
 
 @interface ViewController : UIViewController <CLLocationManagerDelegate>
 
-- (IBAction)buttonNo:(UIButton *)sender;
+//-(double)getDistance;
+
+//- (IBAction)buttonNo:(UIButton *)sender;
 @property (strong, nonatomic) IBOutlet UISlider *DistanceSlider;
+@property (strong, nonatomic) IBOutlet UITextField *DistanceLabel;
 @property (strong, nonatomic) IBOutlet UISlider *PriceSlider;
+@property (strong, nonatomic) IBOutlet UITextField *PriceLabel;
 @property (strong, nonatomic) IBOutlet UILabel *latitudeLabel;
 @property (strong, nonatomic) IBOutlet UILabel *longitudeLabel;
 @property (strong, nonatomic) IBOutlet UILabel *addressLabel;
 
+
 @end
+double distance;
 
 CLLocationManager *locationManager;
 NSString *latitude;
