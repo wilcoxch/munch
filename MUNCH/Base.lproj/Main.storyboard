@@ -21,7 +21,7 @@
                                 <rect key="frame" x="31" y="163" width="313" height="31"/>
                                 <animations/>
                                 <connections>
-                                    <action selector="DistanceSlider:" destination="eJX-OX-UGc" eventType="valueChanged" id="XYC-Ok-KZM"/>
+                                    <action selector="distanceChange:" destination="eJX-OX-UGc" eventType="valueChanged" id="jUk-ja-Uxs"/>
                                 </connections>
                             </slider>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Distance" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AIB-qE-KkB">
@@ -47,9 +47,6 @@
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="3" minValue="1" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="umD-dm-v86">
                                 <rect key="frame" x="31" y="278" width="313" height="31"/>
                                 <animations/>
-                                <connections>
-                                    <action selector="PriceSlider:" destination="eJX-OX-UGc" eventType="valueChanged" id="0LS-vA-aDm"/>
-                                </connections>
                             </slider>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bms-Tt-vfT">
                                 <rect key="frame" x="16" y="19" width="46" height="30"/>
@@ -65,23 +62,17 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="mRP-nT-2sc" appends="YES" id="blb-1R-b9u"/>
-                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="Tx0-DO-bfc"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="DistanceSlider" destination="JnE-MM-3E2" id="wXJ-Wr-vXX"/>
-                        <outlet property="PriceSlider" destination="umD-dm-v86" id="TTg-Ne-ti8"/>
+                        <outlet property="DistanceLabel" destination="AIB-qE-KkB" id="ZhR-ky-y8K"/>
+                        <outlet property="DistanceSlider" destination="JnE-MM-3E2" id="9Jr-VX-LWK"/>
+                        <outlet property="PriceLabel" destination="g6X-ww-TTj" id="NWG-SB-rV7"/>
+                        <outlet property="PriceSlider" destination="umD-dm-v86" id="2xW-IB-WAj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oMy-VI-B5A" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="right" id="mRP-nT-2sc">
-                    <connections>
-                        <segue destination="vXZ-lx-hvc" kind="show" id="Y3e-YX-J2W"/>
-                    </connections>
-                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="784.5" y="-598.5"/>
         </scene>
@@ -264,6 +255,6 @@
         <image name="Settings.jpg" width="150" height="150"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Y3e-YX-J2W"/>
+        <segue reference="31g-as-sGu"/>
     </inferredMetricsTieBreakers>
 </document>

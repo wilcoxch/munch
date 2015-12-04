@@ -134,10 +134,11 @@ static NSString * const kSearchLimit       = @"20";
 //    NSString *ll = [[NSUserDefaults standardUserDefaults] valueForKey:@"ll"] ?: defaultll;
 //    NSString *radius_filter = [[NSUserDefaults standardUserDefaults] valueForKey:@"radius_filter"] ?: defaultRadius_filter;
 //    NSString *offset = [[NSUserDefaults standardUserDefaults] valueForKey:@"offset"] ?: defaultOffset;
+    //ViewController *viewC = [[ViewController alloc] init];
     
     NSString *term = @"food";
     NSString *ll = @"38.3433588,-122.739119";
-    NSString *radius_filter = @"30000";
+    NSString *radius_filter = @"3000"; //[NSString stringWithFormat:@"%f", [ViewController getDistance]]; 
     NSString *offset = offsetNum;
     
     __block NSMutableArray *data;// = [[NSMutableArray alloc] init];
