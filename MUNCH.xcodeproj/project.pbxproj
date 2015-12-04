@@ -45,6 +45,7 @@
 		3F67D77A1BD1E41F003D2F75 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F67D7781BD1E41F003D2F75 /* LaunchScreen.xib */; };
 		3F67D7861BD1E41F003D2F75 /* MUNCHTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F67D7851BD1E41F003D2F75 /* MUNCHTests.m */; };
 		3FB16D341BF2F2F100367786 /* ContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FB16D331BF2F2F100367786 /* ContainerViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		8281957F1C1145C90066C26A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8281957E1C1145C90066C26A /* MapKit.framework */; };
 		829965491BFF0A8700B44EF9 /* Bored_90x90.gif in Resources */ = {isa = PBXBuildFile; fileRef = 829965481BFF0A8700B44EF9 /* Bored_90x90.gif */; };
 		829A99F81BF15D5600C418FF /* bar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 829A99F71BF15D5600C418FF /* bar@2x.png */; };
 		829A99FA1BF15DCB00C418FF /* trollface_300x200@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 829A99F91BF15DCB00C418FF /* trollface_300x200@2x.png */; };
@@ -134,6 +135,7 @@
 		3F67D7851BD1E41F003D2F75 /* MUNCHTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MUNCHTests.m; sourceTree = "<group>"; };
 		3FB16D321BF2F2F100367786 /* ContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContainerViewController.h; sourceTree = "<group>"; };
 		3FB16D331BF2F2F100367786 /* ContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContainerViewController.m; sourceTree = "<group>"; };
+		8281957E1C1145C90066C26A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		829965481BFF0A8700B44EF9 /* Bored_90x90.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = Bored_90x90.gif; path = ../Images/Bored_90x90.gif; sourceTree = "<group>"; };
 		829A99F71BF15D5600C418FF /* bar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bar@2x.png"; path = "../Images/bar@2x.png"; sourceTree = "<group>"; };
 		829A99F91BF15DCB00C418FF /* trollface_300x200@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "trollface_300x200@2x.png"; path = "../Images/trollface_300x200@2x.png"; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				313C21131BFB21B1000E71F2 /* CoreLocation.framework in Frameworks */,
+				8281957F1C1145C90066C26A /* MapKit.framework in Frameworks */,
 				31D5FDAA1BE0797A0052B703 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -172,6 +175,7 @@
 		31D5FDAB1BE079A70052B703 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8281957E1C1145C90066C26A /* MapKit.framework */,
 				313C21121BFB21B1000E71F2 /* CoreLocation.framework */,
 				31D5FDA91BE0797A0052B703 /* Foundation.framework */,
 			);
@@ -410,6 +414,11 @@
 					3F67D7621BD1E41F003D2F75 = {
 						CreatedOnToolsVersion = 6.3.2;
 						DevelopmentTeam = 9A29YRQ4XD;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					3F67D77E1BD1E41F003D2F75 = {
 						CreatedOnToolsVersion = 6.3.2;

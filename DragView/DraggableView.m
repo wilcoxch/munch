@@ -20,6 +20,7 @@
 @implementation DraggableView {
     CGFloat xFromCenter;
     CGFloat yFromCenter;
+    MKMapView *mapView;
 }
 
 //delegate is instance of ViewController
@@ -32,6 +33,7 @@
 @synthesize phone_number;
 @synthesize overlayView;
 @synthesize review_image;
+@synthesize mapView;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -61,6 +63,12 @@
         [review_image setCenter: CGPointMake(self.frame.size.width/6, self.frame.size.height/8)];
         review_image.tintColor = [UIColor grayColor];
         
+        mapView = [[MKMapView alloc]initWithFrame:CGRectMake(0,(self.bounds.size.height)-155,(self.bounds.size.width),(self.bounds.size.height)/3)];
+        mapView.showsUserLocation = YES;
+        mapView.mapType = MKMapTypeStandard;
+        mapView.delegate = self;
+
+        
         self.backgroundColor = [UIColor whiteColor];
 #warning placeholder stuff, replace with card-specific information }
         
@@ -74,6 +82,7 @@
         [self addSubview:rating];
         [self addSubview:review_text];
         [self addSubview:phone_number];
+        [self addSubview:mapView];
 //        [self addSubview:review_image];
         
         overlayView = [[OverlayView alloc]initWithFrame:CGRectMake(self.frame.size.width/2-100, 0, 100, 100)];
