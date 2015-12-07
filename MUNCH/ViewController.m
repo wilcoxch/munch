@@ -43,7 +43,7 @@
 }
 - (IBAction)distanceChange:(id)sender {
     // NSLog(@"%@", [NSString stringWithFormat:@"%f", self.DistanceSlider.value]);
-    distance = (self.DistanceSlider.value*0.83)*1609.34;
+    distance = (self.DistanceSlider.value)*1609.34;
     NSLog(@"%f", distance);
 }
 

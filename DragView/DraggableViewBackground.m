@@ -9,11 +9,13 @@
 #import "DraggableViewBackground.h"
 //#import <Foundation/Foundation.h>
 #import "YPAPISample.h"
+#import "CoreLocation/CoreLocation.h"
 
 @implementation DraggableViewBackground{
     NSInteger offsetIndex;
     NSInteger cardsLoadedIndex; //%%% the index of the card you have loaded into the loadedCards array last
     NSMutableArray *loadedCards; //%%% the array of card loaded (change max_buffer_size to increase or decrease the number of cards this holds)
+    MKMapView *mapView;
     
     UIButton* menuButton;
     UIButton* messageButton;
@@ -91,6 +93,45 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
     UIImage *img = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:urlString]]];
     UIImage *ratingimg = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:urlReviewString]]];
     UIImage *rateimg = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:urlRating]]];
+    NSDictionary *maplocation = [exampleCardLabels[index] objectForKey:@"location"];
+    NSDictionary *coordinate = [maplocation objectForKey:@"coordinate"];
+//    double mapLati = [[coordinate objectForKey:@"latitude"]doubleValue];
+//    double mapLongi = [[coordinate objectForKey:@"longitude"]doubleValue];
+    mapLatitude = [[coordinate objectForKey:@"latitude"]stringValue];
+    mapLongitude = [[coordinate objectForKey:@"longitude"]stringValue];
+
+    draggableView.latitude = mapLatitude;
+    draggableView.longitude = mapLongitude;
+    
+    
+//    MKCoordinateSpan span = MKCoordinateSpanMake(0.0001f, 0.0001f);
+//    CLLocationCoordinate2D coord = {mapLati, mapLongi};
+//    MKCoordinateRegion region = {coord, span};
+//    
+//    MKCoordinateRegion regionThatFits = [self.mapView regionThatFits:region];
+//    NSLog(@"Fit Region %f %f", regionThatFits.center.latitude, regionThatFits.center.longitude);
+//    
+//    [self.mapView setRegion:regionThatFits animated:YES];
+//    CLLocationDegrees latitude = mapLati;
+//    CLLocationDegrees longitude = mapLongi;
+//
+//    CLLocationCoordinate2D startCoord;
+//    startCoord.latitude = latitude;
+//    startCoord.longitude = longitude;
+//    
+//    draggableView.startCoord = self;
+//    typedef struct { CLLocationDegrees mapLati; CLLocationDegrees mapLongi; }
+//    draggableView.mapView.center.latitude = mapLati;
+//    draggableView.mapView.region.center.latitude = mapLati;
+//    draggableView.mapView.region = startCoord;
+    
+//    NSLog(@"LOCATION: %@", mapLati);
+    
+//    draggableView.mapLat.text = [coordinate objectForKey:@"latitude"];
+//    draggableView.mapLong.text = [coordinate objectForKey:@"longitude"];
+    
+//    draggableView.mapLat.double = mapLati;
+    
     draggableView.picture.image = img;
     draggableView.review_image.image = ratingimg;
     draggableView.rating.image = rateimg;

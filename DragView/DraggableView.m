@@ -21,6 +21,9 @@
     CGFloat xFromCenter;
     CGFloat yFromCenter;
     MKMapView *mapView;
+    CLLocationManager *manager;
+    CLGeocoder *geocoder;
+    CLPlacemark *placemark;
 }
 
 //delegate is instance of ViewController
@@ -34,6 +37,11 @@
 @synthesize overlayView;
 @synthesize review_image;
 @synthesize mapView;
+@synthesize latitude;
+@synthesize longitude;
+//@synthesize locationManager;
+//@synthesize mapLat;
+//@synthesize mapLong;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -62,11 +70,39 @@
         review_image = [[UIImageView alloc] initWithFrame:CGRectMake(0  , self.frame.size.height, 80, 80)];
         [review_image setCenter: CGPointMake(self.frame.size.width/6, self.frame.size.height/8)];
         review_image.tintColor = [UIColor grayColor];
+        double mapLati = [latitude doubleValue];
+        double mapLongi = [longitude doubleValue];
+        
+//        maplat.double = @"0.0";
         
         mapView = [[MKMapView alloc]initWithFrame:CGRectMake(0,(self.bounds.size.height)-155,(self.bounds.size.width),(self.bounds.size.height)/3)];
         mapView.showsUserLocation = YES;
         mapView.mapType = MKMapTypeStandard;
-        mapView.delegate = self;
+//        mapView.delegate = self;
+        
+// The map location is set here
+
+//        CLLocationCoordinate2D center = CLLocationCoordinate2DMake(35, -90);
+        CLLocationCoordinate2D center = CLLocationCoordinate2DMake(mapLati, mapLongi); // pick desired values
+        MKCoordinateSpan span = MKCoordinateSpanMake(100, 100); // pick desired values
+        MKCoordinateRegion region = MKCoordinateRegionMake(center, span);
+        region.center.latitude = 40.707184;
+        region.center.longitude = -73.998392;
+        region.center.latitude = mapLati;
+        region.center.longitude = mapLongi;
+        region.span.longitudeDelta = 1.0f;
+        region.span.latitudeDelta = 1.0f;
+        [mapView setRegion:region animated:YES];
+        
+//#warning this is where I am getting current location
+//        manager = [[CLLocationManager alloc] init];
+//        geocoder = [[CLGeocoder alloc] init];
+//        
+//        manager.delegate = self;
+//        manager.desiredAccuracy = kCLLocationAccuracyBest;
+//        
+//        [manager startUpdatingLocation];
+        
 
         
         self.backgroundColor = [UIColor whiteColor];
@@ -253,6 +289,12 @@
     
     NSLog(@"NO");
 }
+
+-(IBAction)GetLocation:(id)sender
+{
+    mapView.showsUserLocation = YES;
+}
+
 
 
 
