@@ -18,7 +18,6 @@ static NSString * const kSearchLimit       = @"20";
     @synthesize defaultRadius_filter;
     @synthesize defaultOffset;
 
-
 #pragma mark - Public
 
 - (void)queryTopBusinessInfoForTerm:(NSString *)term ll:(NSString *)ll radius_filter:(NSString *)radius_filter offset:(NSString *)offset completionHandler:(void (^)(NSArray *businessArray, NSError *error))completionHandler {
@@ -121,7 +120,8 @@ static NSString * const kSearchLimit       = @"20";
   return [NSURLRequest requestWithHost:kAPIHost path:businessPath];
 }
 
-- ( NSArray* )YelpCall:(NSString *)offsetNum {
+- ( NSArray* )YelpCall:(NSString *)offsetNum lat:(NSString *)lat longi:(NSString *)longi
+{
 //    defaultTerm = @"food";
 //    defaultll = @"38.3433588,-122.739119";
 //    defaultRadius_filter = @"30000";
@@ -137,9 +137,10 @@ static NSString * const kSearchLimit       = @"20";
     //ViewController *viewC = [[ViewController alloc] init];
     
     NSString *term = @"food";
-    NSString *ll = @"38.3433588,-122.739119";
     NSString *radius_filter = @"30000"; //[NSString stringWithFormat:@"%f", [ViewController getDistance]];
     NSString *offset = offsetNum;
+    NSString *ll = [NSString stringWithFormat:@"%@,%@", lat, longi];
+    
     
     __block NSMutableArray *data;// = [[NSMutableArray alloc] init];
     YPAPISample *APISample = [[YPAPISample alloc] init];
@@ -152,8 +153,8 @@ static NSString * const kSearchLimit       = @"20";
         if (error) {
             NSLog(@"An error happened during the request: %@", error);
         } else if (topBusinessJSON) {
-            //NSLog(@"Top business info: \n %@", topBusinessJSON);
-            //NSLog(@"More stuff %@\n", [topBusinessJSON :@"Name"]);
+            NSLog(@"Top business info: \n %@", topBusinessJSON);
+           // NSLog(@"More stuff %@\n", [topBusinessJSON :@"Name"]);
             //NSLog(@"More stuff %lu\n", (unsigned long)[topBusinessJSON count]);
             //_APIdata = [NSDictionary dictionaryWithDictionary:topBusinessJSON];
             //NSLog(@"Top business info: \n %@", _APIdata);
@@ -173,5 +174,9 @@ static NSString * const kSearchLimit       = @"20";
     dispatch_group_wait(requestGroup, DISPATCH_TIME_FOREVER); // This avoids the program exiting before all our asynchronous callbacks have been made.
     return data;
 }
+
+//------------ Current Location Address-----
+
+
 
 @end

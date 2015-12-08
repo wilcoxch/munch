@@ -33,15 +33,18 @@
 #import <UIKit/UIKit.h>
 #import "DraggableView.h"
 
-@interface DraggableViewBackground : UIView <DraggableViewDelegate>
+
+@interface DraggableViewBackground : UIView <DraggableViewDelegate, MKMapViewDelegate>
 
 //methods called in DraggableView
 -(void)cardSwipedLeft:(UIView *)card;
 -(void)cardSwipedRight:(UIView *)card;
-- (id)initWithFrame:(CGRect)frame imageName:(NSString *)imageName;
+- (id)initWithFrame:(CGRect)frame lat:(NSString *)lat longi:(NSString *)longi imageName:(NSString *)imageName;
 
 @property (retain,nonatomic)NSArray* exampleCardLabels; //%%% the labels the cards
 @property (retain,nonatomic)NSMutableArray* allCards; //%%% the labels the cards
+@property (nonatomic, strong)NSString *currentLat;
+@property (nonatomic, strong)NSString *currentLong;
 
 
 @end

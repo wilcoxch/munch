@@ -34,6 +34,7 @@
 #import <UIKit/UIKit.h>
 #import "OverlayView.h"
 #import "MapKit/MapKit.h"
+#import "CoreLocation/CoreLocation.h"
 
 @protocol DraggableViewDelegate <NSObject>
 
@@ -56,6 +57,7 @@
 @property (nonatomic,strong)UIImageView* picture;
 @property (nonatomic,strong)UIImageView* rating;
 @property (nonatomic,strong)MKMapView* mapView;
+@property (nonatomic,strong)MKPlacemark* placemark;
 
 -(void)leftClickAction;
 -(void)rightClickAction;

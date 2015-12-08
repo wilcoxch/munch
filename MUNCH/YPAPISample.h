@@ -5,6 +5,8 @@
 
 #import <Foundation/Foundation.h>
 #import "NSURLRequest+OAuth.h"
+#import <CoreLocation/CoreLocation.h> 
+#import <MobileCoreServices/MobileCoreServices.h>
 //#import "ViewController.h"
 
 
@@ -23,6 +25,7 @@
 @property (nonatomic, strong) NSString *defaultll;
 @property (nonatomic, strong) NSString *defaultRadius_filter;
 @property (nonatomic, strong) NSString *defaultOffset;
+@property bool hasUpdated;
 
 /**
  Query the Yelp API with a given term and location and displays the progress in the log
@@ -32,5 +35,5 @@
  */
 - (void)queryTopBusinessInfoForTerm:(NSString *)term ll:(NSString *)ll radius_filter:(NSString *)radius_filter offset:(NSString *)offset completionHandler:(void (^)(NSArray *businessArray, NSError *error))completionHandler;
 
-- ( NSArray* )YelpCall:(NSString *)offsetNum;
+- ( NSArray* )YelpCall:(NSString *)offsetNum lat:(NSString *)lat longi:(NSString *)longi;
 @end
