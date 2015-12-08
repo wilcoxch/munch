@@ -25,7 +25,8 @@
 @property (nonatomic,strong)OverlayView* overlayView;
 @property (nonatomic,strong)UILabel* information; //%%% a placeholder for any card-specific information
 @property (nonatomic,strong)UILabel* review_text;
-@property (nonatomic,strong)UILabel* phone_number;
+//@property (nonatomic,strong)UITextView* phone_number;
+@property (nonatomic,strong)NSString* phone_number;
 @property (nonatomic,strong)UIImageView* review_image;
 @property (nonatomic,strong)UIImageView* picture;
 @property (nonatomic,strong)UIImageView* rating;
@@ -34,6 +35,8 @@
 @property (nonatomic,strong)CLLocationManager *locationManager;
 @property (nonatomic,retain)NSString* longitude;
 @property (nonatomic,retain)NSString* latitude;
+@property (nonatomic,strong)NSURL* callPhone;
+@property (nonatomic,strong)UIButton* phoneButton;
 //@property (nonatomic,assign)CLLocationDegrees mapLat;
 //@property (nonatomic,assign)CLLocationDegrees mapLong;
 
@@ -42,5 +45,6 @@
 -(void)leftClickAction;
 -(void)rightClickAction;
 -(IBAction)setMap:(id)sender;
+-(IBAction)pressForCall:(id)sender;
 
 @end

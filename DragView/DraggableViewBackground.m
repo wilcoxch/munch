@@ -86,56 +86,43 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
     //draggableView.information.text = [exampleCardLabels objectAtIndex:index]; //%%% placeholder for card-specific information
     draggableView.information.text = [exampleCardLabels[index] objectForKey:@"name"];
     draggableView.review_text.text = [exampleCardLabels[index] objectForKey:@"snippet_text"];
-    draggableView.phone_number.text = [exampleCardLabels[index] objectForKey:@"display_phone"];
+//    NSString *phoneString = [exampleCardLabels[index] objectForKey:@"display_phone"];
+//    draggableView.phone_number.text = [exampleCardLabels[index] objectForKey:@"display_phone"];
+//    UITextView *callphone = [exampleCardLabels[index] objectForKey:@"display_phone"];
     NSString *urlString = [exampleCardLabels[index] objectForKey:@"image_url"];
     NSString *urlReviewString = [exampleCardLabels[index] objectForKey:@"snippet_image_url"];
     NSString *urlRating = [exampleCardLabels[index] objectForKey:@"rating_img_url_large"];
     UIImage *img = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:urlString]]];
     UIImage *ratingimg = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:urlReviewString]]];
     UIImage *rateimg = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:urlRating]]];
-    NSDictionary *maplocation = [exampleCardLabels[index] objectForKey:@"location"];
-    NSDictionary *coordinate = [maplocation objectForKey:@"coordinate"];
-//    double mapLati = [[coordinate objectForKey:@"latitude"]doubleValue];
-//    double mapLongi = [[coordinate objectForKey:@"longitude"]doubleValue];
-    mapLatitude = [[coordinate objectForKey:@"latitude"]stringValue];
-    mapLongitude = [[coordinate objectForKey:@"longitude"]stringValue];
+//    NSURL *callPhone = [NSURL URLWithString:[NSString stringWithFormat:@"tel:%@", phoneString]];
 
-    draggableView.latitude = mapLatitude;
-    draggableView.longitude = mapLongitude;
-    
-    
-//    MKCoordinateSpan span = MKCoordinateSpanMake(0.0001f, 0.0001f);
-//    CLLocationCoordinate2D coord = {mapLati, mapLongi};
-//    MKCoordinateRegion region = {coord, span};
-//    
-//    MKCoordinateRegion regionThatFits = [self.mapView regionThatFits:region];
-//    NSLog(@"Fit Region %f %f", regionThatFits.center.latitude, regionThatFits.center.longitude);
-//    
-//    [self.mapView setRegion:regionThatFits animated:YES];
-//    CLLocationDegrees latitude = mapLati;
-//    CLLocationDegrees longitude = mapLongi;
-//
-//    CLLocationCoordinate2D startCoord;
-//    startCoord.latitude = latitude;
-//    startCoord.longitude = longitude;
-//    
-//    draggableView.startCoord = self;
-//    typedef struct { CLLocationDegrees mapLati; CLLocationDegrees mapLongi; }
-//    draggableView.mapView.center.latitude = mapLati;
-//    draggableView.mapView.region.center.latitude = mapLati;
-//    draggableView.mapView.region = startCoord;
-    
-//    NSLog(@"LOCATION: %@", mapLati);
-    
-//    draggableView.mapLat.text = [coordinate objectForKey:@"latitude"];
-//    draggableView.mapLong.text = [coordinate objectForKey:@"longitude"];
-    
-//    draggableView.mapLat.double = mapLati;
+    NSMutableString *phoneInfo = [exampleCardLabels[index] objectForKey:@"display_phone"];
+    NSMutableString *phone = [[phoneInfo mutableCopy] autorelease];
+    [phone replaceOccurrencesOfString:@" "
+                           withString:@""
+                              options:NSLiteralSearch
+                                range:NSMakeRange(0, [phone length])];
+    [phone replaceOccurrencesOfString:@"("
+                           withString:@""
+                              options:NSLiteralSearch
+                                range:NSMakeRange(0, [phone length])];
+    [phone replaceOccurrencesOfString:@")"
+                           withString:@""
+                              options:NSLiteralSearch
+                                range:NSMakeRange(0, [phone length])];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"tel:%@", phone]];
+    [[UIApplication sharedApplication] openURL:url];
+
     
     draggableView.picture.image = img;
     draggableView.review_image.image = ratingimg;
     draggableView.rating.image = rateimg;
+    draggableView.callPhone = url;
+    
+//    draggableView.phone_number = url;
     draggableView.delegate = self;
+//    [draggableView.phoneButton setTitle: phoneInfo forState:UIControlStateNormal];
     
     return draggableView;
 }
@@ -253,6 +240,11 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
     [dragView leftClickAction];
 }
 
+//-(void)buttonPressed:(id)sender{
+//    // open url
+//    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:phoneString]];
+//    
+//}
 
 /*
 // Only override drawRect: if you perform custom drawing.

@@ -39,6 +39,9 @@
 @synthesize mapView;
 @synthesize latitude;
 @synthesize longitude;
+@synthesize phoneButton;
+
+//@synthesize callPhone;
 //@synthesize locationManager;
 //@synthesize mapLat;
 //@synthesize mapLong;
@@ -50,28 +53,61 @@
         [self setupView];
         
 #warning placeholder stuff, replace with card-specific information {
-        information = [[UILabel alloc]initWithFrame:CGRectMake(0, 50, self.frame.size.width, 175)];
+        information = [[UILabel alloc]initWithFrame:CGRectMake(5, 120, self.frame.size.width -10, 50)];
         information.text = @"no info given";
         [information setTextAlignment:NSTextAlignmentCenter];
         information.textColor = [UIColor blackColor];
-        review_text = [[UILabel alloc]initWithFrame:CGRectMake(0, 50, self.frame.size.width, 500)];
+        [information setFont:[UIFont fontWithName:@"ArialRoundedMTBold" size:19]]; information.text=@"sagar";
+
+        review_text = [[UILabel alloc]initWithFrame:CGRectMake(10, 10, self.frame.size.width - 20, 500)];
         review_text.text = @"no info given";
         [review_text setTextAlignment:NSTextAlignmentCenter];
+        [review_text setFont:[UIFont fontWithName:@"Arial-ItalicMT" size:16]]; information.text=@"sagar";
         review_text.textColor = [UIColor blackColor];
-        phone_number = [[UILabel alloc]initWithFrame:CGRectMake(0, 50, self.frame.size.width, 250)];
-        phone_number.text = @"no info given";
-        [phone_number setTextAlignment:NSTextAlignmentCenter];
-        phone_number.textColor = [UIColor blackColor];
+
         picture = [[UIImageView alloc] initWithFrame:CGRectMake(0  , 0, 100, 100)];
         [picture setCenter: CGPointMake(self.frame.size.width/6, self.frame.size.height/8)];
         picture.tintColor = [UIColor grayColor];
-        rating = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 200, 40)];
+        rating = [[UIImageView alloc] initWithFrame:CGRectMake(0, 10, 200, 40)];
         [rating setCenter: CGPointMake(self.frame.size.width/1.5, 25)];
         review_image = [[UIImageView alloc] initWithFrame:CGRectMake(0  , self.frame.size.height, 80, 80)];
         [review_image setCenter: CGPointMake(self.frame.size.width/6, self.frame.size.height/8)];
         review_image.tintColor = [UIColor grayColor];
         double mapLati = [latitude doubleValue];
         double mapLongi = [longitude doubleValue];
+        
+        UIButton *callPress = [UIButton buttonWithType: UIButtonTypeCustom];
+//        [callPress setTitle:@"Press to Call" forState:UIControlStateNormal];
+        [callPress setFrame:CGRectMake(120, 55, 60, 60)];
+
+        UIImage *callPressNormalImage = [UIImage imageNamed:@"call-button.png"];
+        [callPress setBackgroundImage:callPressNormalImage forState:UIControlStateNormal];
+        
+        
+
+
+//        phone_number = [[NSString alloc]initWithFrame:CGRectMake(130, 50, 200, 30)];
+//        phone_number.text = @"no info given";
+//        [phone_number setTextAlignment:NSTextAlignmentCenter];
+//        phone_number.textColor = [UIColor blackColor];
+//        [phone_number setFont:[UIFont fontWithName:@"ArialRoundedMTBold" size:19]]; information.text=@"sagar";
+//        callPhone = [NSURL alloc];
+        
+        
+//        phone_number = [NSURL alloc];
+//        phone_number = [[UITextView alloc]initWithFrame:CGRectMake(130  , 50, 200, 30)];
+//        phone_number.text = @"no info given";
+//        phone_number = [UITextView stringWithFormat:@"tel:%@", phone_number];
+        
+//        phone_number.editable = NO;
+//        phone_number.dataDetectorTypes = UIDataDetectorTypePhoneNumber;
+//        [phone_number setFont:[UIFont fontWithName:@"ArialRoundedMTBold" size:17]]; phone_number.text=@"sagar";
+//        [phone_number setTextAlignment:NSTextAlignmentCenter];
+//        phone_number.textColor = [UIColor blackColor];
+//        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"tel:%@", phone_number]];
+//        [[UIApplication sharedApplication] openURL:url];
+
+
         
 //        maplat.double = @"0.0";
         
@@ -112,12 +148,15 @@
         
         panGestureRecognizer = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(beingDragged:)];
         
+        [self addSubview:phone_number];
         [self addGestureRecognizer:panGestureRecognizer];
         [self addSubview:information];
         [self addSubview:picture];
         [self addSubview:rating];
         [self addSubview:review_text];
-        [self addSubview:phone_number];
+        [self addSubview:callPress];
+//        [self addSubview:phoneButton];
+        
         [self addSubview:mapView];
 //        [self addSubview:review_image];
         
@@ -290,12 +329,9 @@
     NSLog(@"NO");
 }
 
--(IBAction)GetLocation:(id)sender
-{
-    mapView.showsUserLocation = YES;
-}
-
-
+//-(IBAction)pushButton {
+//    [[UIApplication sharedApplication] openURL: [NSURLWithString:"@http://www.youtube.com"]];
+//}
 
 
 @end
