@@ -28,6 +28,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     distance = 1609.34;
 }
 
@@ -51,6 +52,8 @@
      NSLog(@"%f", distance);
     return distance;
 }
+
+
 
 
 @end

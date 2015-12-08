@@ -10,11 +10,12 @@
 //#import <Foundation/Foundation.h>
 #import "YPAPISample.h"
 
+
+
 @implementation DraggableViewBackground{
     NSInteger offsetIndex;
     NSInteger cardsLoadedIndex; //%%% the index of the card you have loaded into the loadedCards array last
     NSMutableArray *loadedCards; //%%% the array of card loaded (change max_buffer_size to increase or decrease the number of cards this holds)
-    
     UIButton* menuButton;
     UIButton* messageButton;
     UIButton* checkButton;
@@ -31,6 +32,9 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
 
 @synthesize exampleCardLabels; //%%% all the labels I'm using as example data at the moment
 @synthesize allCards;//%%% all the cards
+@synthesize currentLat;
+@synthesize currentLong;
+
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -41,7 +45,8 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
 //        [self YelpCall];
 //        exampleCardLabels = [[NSArray alloc]initWithObjects:@"first",@"second",@"third",@"fourth",@"last", nil]; //%%% placeholder for card-specific information
         YPAPISample *dataArray = [[YPAPISample alloc] init];
-        exampleCardLabels = [[NSArray alloc] initWithArray:[dataArray YelpCall:@"0"]];
+        NSArray *apiArray = [dataArray YelpCall:@"0" lat:currentLat longi:currentLong];
+        exampleCardLabels = [[NSArray alloc] initWithArray:apiArray];
         loadedCards = [[NSMutableArray alloc] init];
         allCards = [[NSMutableArray alloc] init];
         cardsLoadedIndex = 0;
@@ -94,6 +99,23 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
     draggableView.picture.image = img;
     draggableView.review_image.image = ratingimg;
     draggableView.rating.image = rateimg;
+    
+    double cardLat = [currentLat doubleValue];
+    double cardLong = [currentLong doubleValue];
+    
+    double pinLat = [[[[exampleCardLabels[index] objectForKey:@"location"] objectForKey:@"coordinate" ] objectForKey:@"latitude"] doubleValue];
+    double pinLong = [[[[exampleCardLabels[index] objectForKey:@"location"] objectForKey:@"coordinate" ] objectForKey:@"longitude"] doubleValue];
+    CLLocationCoordinate2D cardCoord = CLLocationCoordinate2DMake(pinLat, pinLong);
+    [[draggableView.placemark initWithCoordinate:cardCoord addressDictionary:nil] autorelease];
+    [draggableView.mapView addAnnotation:draggableView.placemark];
+    
+    CLLocationCoordinate2D center = CLLocationCoordinate2DMake(cardLat, cardLong);
+    MKCoordinateSpan span = MKCoordinateSpanMake( ABS(MAX(cardLat, pinLat) - MIN(cardLat,pinLat)) + .15, ABS(MAX(cardLong, pinLong) - MIN(cardLong,pinLong)) + .15);
+    MKCoordinateRegion reg = MKCoordinateRegionMake(center, span);
+    [draggableView.mapView setRegion: reg animated: true];
+    draggableView.mapView.centerCoordinate = center;
+
+    draggableView.mapView.delegate = self;
     draggableView.delegate = self;
     
     return draggableView;
@@ -156,7 +178,7 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
     
     if ((cardsLoadedIndex) != 0 && (cardsLoadedIndex)%[exampleCardLabels count] == 0){
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            exampleCardLabels = [[[YPAPISample alloc] init] YelpCall:[NSString stringWithFormat:@"%li",(long)cardsLoadedIndex]];
+            exampleCardLabels = [[[YPAPISample alloc] init] YelpCall:[NSString stringWithFormat:@"%li",(long)cardsLoadedIndex+1] lat:currentLat longi:currentLong];
         });
     }
 
@@ -185,7 +207,7 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
     
     if ((cardsLoadedIndex) != 0 && (cardsLoadedIndex)%[exampleCardLabels count] == 0){
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            exampleCardLabels = [[[YPAPISample alloc] init] YelpCall:[NSString stringWithFormat:@"%li",(long)cardsLoadedIndex+1]];
+            exampleCardLabels = [[[YPAPISample alloc] init] YelpCall:[NSString stringWithFormat:@"%li",(long)cardsLoadedIndex+1] lat:currentLat longi:currentLong];
         });
     }
 }

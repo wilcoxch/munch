@@ -20,7 +20,6 @@
 @implementation DraggableView {
     CGFloat xFromCenter;
     CGFloat yFromCenter;
-    MKMapView *mapView;
 }
 
 //delegate is instance of ViewController
@@ -34,6 +33,7 @@
 @synthesize overlayView;
 @synthesize review_image;
 @synthesize mapView;
+@synthesize placemark;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -66,10 +66,10 @@
         mapView = [[MKMapView alloc]initWithFrame:CGRectMake(0,(self.bounds.size.height)-155,(self.bounds.size.width),(self.bounds.size.height)/3)];
         mapView.showsUserLocation = YES;
         mapView.mapType = MKMapTypeStandard;
-        mapView.delegate = self;
-
+        placemark = [MKPlacemark alloc];
         
         self.backgroundColor = [UIColor whiteColor];
+        
 #warning placeholder stuff, replace with card-specific information }
         
         
