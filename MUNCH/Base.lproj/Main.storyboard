@@ -142,6 +142,12 @@
         <!--Temp List-->
         <scene sceneID="jhs-Ra-dpN">
             <objects>
+                <swipeGestureRecognizer direction="left" id="dAo-GD-htX">
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="show" id="d2F-b7-uUD"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qfv-qQ-jZ6" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController title="Temp List" id="oOL-Gf-edS" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Aj6-8a-MHC">
                         <rect key="frame" x="0.0" y="64" width="375" height="559"/>
@@ -183,12 +189,6 @@
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qfv-qQ-jZ6" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="left" id="dAo-GD-htX">
-                    <connections>
-                        <segue destination="vXZ-lx-hvc" kind="show" id="d2F-b7-uUD"/>
-                    </connections>
-                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1584.5" y="-505.5"/>
         </scene>

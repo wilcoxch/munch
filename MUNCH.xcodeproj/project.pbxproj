@@ -9,17 +9,6 @@
 /* Begin PBXBuildFile section */
 		313C21131BFB21B1000E71F2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 313C21121BFB21B1000E71F2 /* CoreLocation.framework */; };
 		31A9DD4F1C16C05100398F49 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31A9DD4E1C16C05100398F49 /* MapKit.framework */; };
-		31A9DE611C16C0F200398F49 /* .Parent in Resources */ = {isa = PBXBuildFile; fileRef = 31A9DD531C16C0F100398F49 /* .Parent */; };
-		31A9DE621C16C0F200398F49 /* bar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 31A9DD541C16C0F100398F49 /* bar@2x.png */; };
-		31A9DE631C16C0F200398F49 /* Bored_90x90.gif in Resources */ = {isa = PBXBuildFile; fileRef = 31A9DD551C16C0F100398F49 /* Bored_90x90.gif */; };
-		31A9DE641C16C0F200398F49 /* Finished Assets - Shortcut.lnk in Resources */ = {isa = PBXBuildFile; fileRef = 31A9DD561C16C0F100398F49 /* Finished Assets - Shortcut.lnk */; };
-		31A9DE651C16C0F200398F49 /* munchicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 31A9DD571C16C0F100398F49 /* munchicon.png */; };
-		31A9DE661C16C0F200398F49 /* pizzaButt.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 31A9DD581C16C0F100398F49 /* pizzaButt.pdf */; };
-		31A9DE671C16C0F200398F49 /* pizzaButt.png in Resources */ = {isa = PBXBuildFile; fileRef = 31A9DD591C16C0F100398F49 /* pizzaButt.png */; };
-		31A9DE681C16C0F200398F49 /* pizzaButt.svg in Resources */ = {isa = PBXBuildFile; fileRef = 31A9DD5A1C16C0F100398F49 /* pizzaButt.svg */; };
-		31A9DE691C16C0F200398F49 /* Settings.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 31A9DD5B1C16C0F100398F49 /* Settings.jpg */; };
-		31A9DE6A1C16C0F200398F49 /* thumbs_up_300x300@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 31A9DD5C1C16C0F100398F49 /* thumbs_up_300x300@2x.png */; };
-		31A9DE6B1C16C0F200398F49 /* trollface_300x200@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 31A9DD5D1C16C0F100398F49 /* trollface_300x200@2x.png */; };
 		31A9DE6C1C16C0F200398F49 /* bar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 31A9DD5E1C16C0F100398F49 /* bar@2x.png */; };
 		31A9DE6D1C16C0F200398F49 /* Bored_90x90.gif in Resources */ = {isa = PBXBuildFile; fileRef = 31A9DD5F1C16C0F100398F49 /* Bored_90x90.gif */; };
 		31A9DE6E1C16C0F200398F49 /* Finished Assets - Shortcut.lnk in Resources */ = {isa = PBXBuildFile; fileRef = 31A9DD601C16C0F100398F49 /* Finished Assets - Shortcut.lnk */; };
@@ -306,17 +295,6 @@
 /* Begin PBXFileReference section */
 		313C21121BFB21B1000E71F2 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		31A9DD4E1C16C05100398F49 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		31A9DD531C16C0F100398F49 /* .Parent */ = {isa = PBXFileReference; lastKnownFileType = file; path = .Parent; sourceTree = "<group>"; };
-		31A9DD541C16C0F100398F49 /* bar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bar@2x.png"; sourceTree = "<group>"; };
-		31A9DD551C16C0F100398F49 /* Bored_90x90.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Bored_90x90.gif; sourceTree = "<group>"; };
-		31A9DD561C16C0F100398F49 /* Finished Assets - Shortcut.lnk */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Finished Assets - Shortcut.lnk"; sourceTree = "<group>"; };
-		31A9DD571C16C0F100398F49 /* munchicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = munchicon.png; sourceTree = "<group>"; };
-		31A9DD581C16C0F100398F49 /* pizzaButt.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = pizzaButt.pdf; sourceTree = "<group>"; };
-		31A9DD591C16C0F100398F49 /* pizzaButt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pizzaButt.png; sourceTree = "<group>"; };
-		31A9DD5A1C16C0F100398F49 /* pizzaButt.svg */ = {isa = PBXFileReference; lastKnownFileType = file; path = pizzaButt.svg; sourceTree = "<group>"; };
-		31A9DD5B1C16C0F100398F49 /* Settings.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Settings.jpg; sourceTree = "<group>"; };
-		31A9DD5C1C16C0F100398F49 /* thumbs_up_300x300@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thumbs_up_300x300@2x.png"; sourceTree = "<group>"; };
-		31A9DD5D1C16C0F100398F49 /* trollface_300x200@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trollface_300x200@2x.png"; sourceTree = "<group>"; };
 		31A9DD5E1C16C0F100398F49 /* bar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bar@2x.png"; sourceTree = "<group>"; };
 		31A9DD5F1C16C0F100398F49 /* Bored_90x90.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Bored_90x90.gif; sourceTree = "<group>"; };
 		31A9DD601C16C0F100398F49 /* Finished Assets - Shortcut.lnk */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Finished Assets - Shortcut.lnk"; sourceTree = "<group>"; };
@@ -646,7 +624,6 @@
 		31A9DD511C16C0F100398F49 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				31A9DD521C16C0F100398F49 /* .AppleDouble */,
 				31A9DD5E1C16C0F100398F49 /* bar@2x.png */,
 				31A9DD5F1C16C0F100398F49 /* Bored_90x90.gif */,
 				31A9DD601C16C0F100398F49 /* Finished Assets - Shortcut.lnk */,
@@ -663,24 +640,6 @@
 			);
 			path = Images;
 			sourceTree = SOURCE_ROOT;
-		};
-		31A9DD521C16C0F100398F49 /* .AppleDouble */ = {
-			isa = PBXGroup;
-			children = (
-				31A9DD531C16C0F100398F49 /* .Parent */,
-				31A9DD541C16C0F100398F49 /* bar@2x.png */,
-				31A9DD551C16C0F100398F49 /* Bored_90x90.gif */,
-				31A9DD561C16C0F100398F49 /* Finished Assets - Shortcut.lnk */,
-				31A9DD571C16C0F100398F49 /* munchicon.png */,
-				31A9DD581C16C0F100398F49 /* pizzaButt.pdf */,
-				31A9DD591C16C0F100398F49 /* pizzaButt.png */,
-				31A9DD5A1C16C0F100398F49 /* pizzaButt.svg */,
-				31A9DD5B1C16C0F100398F49 /* Settings.jpg */,
-				31A9DD5C1C16C0F100398F49 /* thumbs_up_300x300@2x.png */,
-				31A9DD5D1C16C0F100398F49 /* trollface_300x200@2x.png */,
-			);
-			path = .AppleDouble;
-			sourceTree = "<group>";
 		};
 		31A9DD611C16C0F100398F49 /* Icon */ = {
 			isa = PBXGroup;
@@ -1393,7 +1352,6 @@
 				31A9DE791C16C0F200398F49 /* Icon.png~HEAD in Resources */,
 				31A9DF001C16C0F200398F49 /* Load Screen pdn 03.pdn in Resources */,
 				31A9DED61C16C0F200398F49 /* Main Screen png.png in Resources */,
-				31A9DE691C16C0F200398F49 /* Settings.jpg in Resources */,
 				31A9DE911C16C0F200398F49 /* Button Base (Back).pdn in Resources */,
 				31A9DE931C16C0F200398F49 /* Button Base (Search).pdn in Resources */,
 				31A9DEE41C16C0F200398F49 /* .Parent in Resources */,
@@ -1430,7 +1388,6 @@
 				31A9DEF61C16C0F200398F49 /* .Parent in Resources */,
 				31A9DEEA1C16C0F200398F49 /* Munch Icon ver 1.0 pdn.pdn in Resources */,
 				31A9DEDC1C16C0F200398F49 /* Favorites Screen png.png in Resources */,
-				31A9DE611C16C0F200398F49 /* .Parent in Resources */,
 				31A9DEF81C16C0F200398F49 /* Favorites Screen png.png in Resources */,
 				31A9DEAF1C16C0F200398F49 /* Main Screen Buttons (Alt).pdn in Resources */,
 				31A9DE901C16C0F200398F49 /* Back Button.pdn~HEAD in Resources */,
@@ -1438,8 +1395,6 @@
 				31A9DE7C1C16C0F200398F49 /* Icon-60@3x.png in Resources */,
 				31A9DEF91C16C0F200398F49 /* Favorites Screen.pdn in Resources */,
 				31A9DF181C16C0F200398F49 /* Main Screen (3rd ed.) pgn.png in Resources */,
-				31A9DE651C16C0F200398F49 /* munchicon.png in Resources */,
-				31A9DE641C16C0F200398F49 /* Finished Assets - Shortcut.lnk in Resources */,
 				31A9DECF1C16C0F200398F49 /* Options Screen pdn.pdn in Resources */,
 				31A9DF511C16C0F200398F49 /* thumbs_up_300x300@2x.png in Resources */,
 				31A9DE7D1C16C0F200398F49 /* Icon-Small-40.png in Resources */,
@@ -1524,7 +1479,6 @@
 				31A9DEA91C16C0F200398F49 /* Button Base (Back).pdn in Resources */,
 				31A9DF091C16C0F200398F49 /* Load Screen pdn 01.pdn in Resources */,
 				31A9DEE61C16C0F200398F49 /* Munch Skeleton Layout 01 png.png in Resources */,
-				31A9DE671C16C0F200398F49 /* pizzaButt.png in Resources */,
 				31A9DF261C16C0F200398F49 /* Main Screen (Restaurant) png.png in Resources */,
 				31A9DF021C16C0F200398F49 /* Load Screen png 01.png in Resources */,
 				31A9DF191C16C0F200398F49 /* Main Screen (Restaurant) pdn.pdn in Resources */,
@@ -1546,9 +1500,7 @@
 				31A9DEBC1C16C0F200398F49 /* Options and Favorite Buttons (gradiant).pdn in Resources */,
 				31A9DE9A1C16C0F200398F49 /* Main Screen Buttons (Alt, ver 2) png.png in Resources */,
 				31A9DF2A1C16C0F200398F49 /* Main Screen png.png in Resources */,
-				31A9DE6B1C16C0F200398F49 /* trollface_300x200@2x.png in Resources */,
 				31A9DF411C16C0F200398F49 /* Icon-Small@2x.png in Resources */,
-				31A9DE621C16C0F200398F49 /* bar@2x.png in Resources */,
 				31A9DEF71C16C0F200398F49 /* Favorites Screen pdn.pdn in Resources */,
 				31A9DF2B1C16C0F200398F49 /* .Parent in Resources */,
 				31A9DF521C16C0F200398F49 /* trollface_300x200@2x.png in Resources */,
@@ -1560,13 +1512,11 @@
 				31A9DEE71C16C0F200398F49 /* Munch Skeleton Layout 01 pdn.pdn in Resources */,
 				31A9DEA21C16C0F200398F49 /* Main Screen Buttons.pdn in Resources */,
 				31A9DF271C16C0F200398F49 /* Main Screen (Restaurant).pdn in Resources */,
-				31A9DE631C16C0F200398F49 /* Bored_90x90.gif in Resources */,
 				31A9DEA51C16C0F200398F49 /* Options and Favorite Buttons.pdn in Resources */,
 				31A9DE8E1C16C0F200398F49 /* Back Button png.png in Resources */,
 				31A9DF4E1C16C0F200398F49 /* pizzaButt.png in Resources */,
 				31A9DEFF1C16C0F200398F49 /* Load Screen pdn 02.pdn in Resources */,
 				31A9DEF21C16C0F200398F49 /* Munch Icon ver 1.2 pdn.pdn in Resources */,
-				31A9DE6A1C16C0F200398F49 /* thumbs_up_300x300@2x.png in Resources */,
 				31A9DF0E1C16C0F200398F49 /* Load Screen png 02.png in Resources */,
 				31A9DEE51C16C0F200398F49 /* Munch Skeleton Layout 01 pdn.pdn in Resources */,
 				31A9DF0B1C16C0F200398F49 /* Load Screen pdn 03.pdn in Resources */,
@@ -1576,7 +1526,6 @@
 				31A9DE801C16C0F200398F49 /* Icon-Small@2x.png in Resources */,
 				31A9DF4D1C16C0F200398F49 /* pizzaButt.pdf in Resources */,
 				31A9DED01C16C0F200398F49 /* Star Button pdn.pdn in Resources */,
-				31A9DE681C16C0F200398F49 /* pizzaButt.svg in Resources */,
 				31A9DEFB1C16C0F200398F49 /* Favorites Screen png.png in Resources */,
 				31A9DEEC1C16C0F200398F49 /* Munch Icon ver 1.2 pdn.pdn in Resources */,
 				3F67D77A1BD1E41F003D2F75 /* LaunchScreen.xib in Resources */,
@@ -1589,7 +1538,6 @@
 				31A9DF331C16C0F200398F49 /* More Options pdn 01.pdn in Resources */,
 				31A9DEDD1C16C0F200398F49 /* Gear Button png.png in Resources */,
 				31A9DEB91C16C0F200398F49 /* Main Screen Buttons (unmodd'd).pdn in Resources */,
-				31A9DE661C16C0F200398F49 /* pizzaButt.pdf in Resources */,
 				31A9DEA11C16C0F200398F49 /* Main Screen Buttons (unmodd'd).pdn in Resources */,
 				31A9DF1F1C16C0F200398F49 /* Main Screen png.png in Resources */,
 				31A9DEF51C16C0F200398F49 /* .Parent in Resources */,
