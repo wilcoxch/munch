@@ -153,17 +153,13 @@ static NSString * const kSearchLimit       = @"20";
         if (error) {
             NSLog(@"An error happened during the request: %@", error);
         } else if (topBusinessJSON) {
-            NSLog(@"Top business info: \n %@", topBusinessJSON);
+            //NSLog(@"Top business info: \n %@", topBusinessJSON);
            // NSLog(@"More stuff %@\n", [topBusinessJSON :@"Name"]);
             //NSLog(@"More stuff %lu\n", (unsigned long)[topBusinessJSON count]);
             //_APIdata = [NSDictionary dictionaryWithDictionary:topBusinessJSON];
             //NSLog(@"Top business info: \n %@", _APIdata);
             data = [[NSMutableArray alloc] initWithArray:topBusinessJSON];
-            //            [exampleCardLabels retain];
-                        for (int i = 0; i < [data count]; ++i) {
-                            NSLog(@"Draggable: %@", [data[i] objectForKey:@"name"]);
-                            NSLog(@"Draggable: %@", [data[i] objectForKey:@"name"]);
-                        }
+ 
         } else {
             NSLog(@"No business was found");
         }

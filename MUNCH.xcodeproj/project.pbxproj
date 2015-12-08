@@ -150,7 +150,6 @@
 		82A22BFE1BF596BE00265C56 /* DraggableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 82A22BF91BF596BE00265C56 /* DraggableView.m */; };
 		82A22BFF1BF596BE00265C56 /* DraggableViewBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = 82A22BFB1BF596BE00265C56 /* DraggableViewBackground.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		82A22C001BF596BE00265C56 /* OverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 82A22BFD1BF596BE00265C56 /* OverlayView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		82E7F5081BE31CA9003A1785 /* Restaurant.m in Sources */ = {isa = PBXBuildFile; fileRef = 82E7F5071BE31CA9003A1785 /* Restaurant.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -339,8 +338,6 @@
 		82A22BFB1BF596BE00265C56 /* DraggableViewBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DraggableViewBackground.m; path = DragView/DraggableViewBackground.m; sourceTree = "<group>"; };
 		82A22BFC1BF596BE00265C56 /* OverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OverlayView.h; path = DragView/OverlayView.h; sourceTree = "<group>"; };
 		82A22BFD1BF596BE00265C56 /* OverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OverlayView.m; path = DragView/OverlayView.m; sourceTree = "<group>"; };
-		82E7F5061BE31CA9003A1785 /* Restaurant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Restaurant.h; sourceTree = "<group>"; };
-		82E7F5071BE31CA9003A1785 /* Restaurant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Restaurant.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -468,8 +465,6 @@
 			isa = PBXGroup;
 			children = (
 				82A22C011BF596D000265C56 /* DragView */,
-				82E7F5061BE31CA9003A1785 /* Restaurant.h */,
-				82E7F5071BE31CA9003A1785 /* Restaurant.m */,
 				3FB16D321BF2F2F100367786 /* ContainerViewController.h */,
 				3FB16D331BF2F2F100367786 /* ContainerViewController.m */,
 				3F67D76A1BD1E41F003D2F75 /* AppDelegate.h */,
@@ -988,7 +983,6 @@
 				31FF57881BE30CC10086815E /* OAPlaintextSignatureProvider.m in Sources */,
 				31FF57871BE30CC10086815E /* OAMutableURLRequest.m in Sources */,
 				31FF57A11BE30D170086815E /* NSURL+Base.m in Sources */,
-				82E7F5081BE31CA9003A1785 /* Restaurant.m in Sources */,
 				31FF573C1BE30C620086815E /* NSURLRequest+OAuth.m in Sources */,
 				31FF57841BE30CC10086815E /* OAConsumer.m in Sources */,
 				31FF57A91BE30D400086815E /* Base64Transcoder.c in Sources */,

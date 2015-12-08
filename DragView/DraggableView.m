@@ -83,7 +83,7 @@
         [self addSubview:review_text];
         [self addSubview:phone_number];
         [self addSubview:mapView];
-//        [self addSubview:review_image];
+        //[self addSubview:review_image];
         
         overlayView = [[OverlayView alloc]initWithFrame:CGRectMake(self.frame.size.width/2-100, 0, 100, 100)];
         overlayView.alpha = 0;

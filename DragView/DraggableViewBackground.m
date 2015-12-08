@@ -178,9 +178,18 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
     
     if ((cardsLoadedIndex) != 0 && (cardsLoadedIndex)%[exampleCardLabels count] == 0){
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            exampleCardLabels = [[[YPAPISample alloc] init] YelpCall:[NSString stringWithFormat:@"%li",(long)cardsLoadedIndex+1] lat:currentLat longi:currentLong];
+            exampleCardLabels = [[[YPAPISample alloc]init] YelpCall:[NSString stringWithFormat:@"%li",(long)cardsLoadedIndex+1] lat:currentLat longi:currentLong];
         });
+        //dispatch_release(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0));
     }
+    
+//    if ([allCards count] > 25 ) {
+//        for (int i = 0; i < [allCards count]-10; i++) {
+//            [[allCards objectAtIndex:i] dealloc];
+//            [allCards removeObjectAtIndex:i];
+//            cardsLoadedIndex--;
+//        }
+//    }
 
 }
 
@@ -192,7 +201,18 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
     //do whatever you want with the card that was swiped
     //    DraggableView *c = (DraggableView *)card;
     
+    NSMutableArray *sendCard = [[NSMutableArray alloc]init];
+    [sendCard addObject:[self.exampleCardLabels objectAtIndex:(cardsLoadedIndex-2)%[exampleCardLabels count]]];
+    
+    
+    double pinLat = [[[[sendCard[0] objectForKey:@"location"] objectForKey:@"coordinate" ] objectForKey:@"latitude"] doubleValue];
+    double pinLong = [[[[sendCard[0] objectForKey:@"location"] objectForKey:@"coordinate" ] objectForKey:@"longitude"] doubleValue];
+    
+    [self sendToMap:pinLat lon:pinLong name:[sendCard[0] objectForKey:@"name"] ];
+    
     [loadedCards removeObjectAtIndex:0]; //%%% card was swiped, so it's no longer a "loaded card"
+    
+    
     
     if (cardsLoadedIndex < [allCards count]) { //%%% if we haven't reached the end of all cards, put another into the loaded cards
         [loadedCards addObject:[allCards objectAtIndex:cardsLoadedIndex]];
@@ -207,9 +227,19 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
     
     if ((cardsLoadedIndex) != 0 && (cardsLoadedIndex)%[exampleCardLabels count] == 0){
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            exampleCardLabels = [[[YPAPISample alloc] init] YelpCall:[NSString stringWithFormat:@"%li",(long)cardsLoadedIndex+1] lat:currentLat longi:currentLong];
+            exampleCardLabels = [[[YPAPISample alloc]init] YelpCall:[NSString stringWithFormat:@"%li",(long)cardsLoadedIndex+1] lat:currentLat longi:currentLong];
         });
+        
     }
+    
+//    if ([allCards count] > 25 ) {
+//        for (int i = 0; i < [allCards count]-10; i++) {
+//            [[allCards objectAtIndex:i] dealloc];
+//            [allCards removeObjectAtIndex:i];
+//            cardsLoadedIndex--;
+//        }
+//    }
+    
 }
 
 //%%% when you hit the right button, this is called and substitutes the swipe
@@ -244,5 +274,38 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
 }
 */
 
+- (void)sendToMap:(double)lat lon:(double)lon name:(NSString*)name
+{
+    double destinationLatitude, destinationLongitude;
+    destinationLatitude = lat;// Latitude of destination place.
+    destinationLongitude = lon;// Longitude of destination place.
+    
+    Class mapItemClass = [MKMapItem class];
+    if (mapItemClass && [mapItemClass respondsToSelector:@selector(openMapsWithItems:launchOptions:)])
+    {
+        
+        // Create an MKMapItem to pass to the Maps app
+        CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(destinationLatitude,destinationLongitude);
+        
+        
+        MKPlacemark *placemark = [[MKPlacemark alloc] initWithCoordinate:coordinate
+                                                       addressDictionary:nil];
+        MKMapItem *mapItem = [[MKMapItem alloc] initWithPlacemark:placemark];
+        [mapItem setName:name];
+        
+        
+        
+        // Set the directions mode to "Driving"
+        // Can use MKLaunchOptionsDirectionsModeDriving instead
+        NSDictionary *launchOptions = @{MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving};
+        // Get the "Current User Location" MKMapItem
+        MKMapItem *currentLocationMapItem = [MKMapItem mapItemForCurrentLocation];
+        // Pass the current location and destination map items to the Maps app
+        // Set the direction mode in the launchOptions dictionary
+        [MKMapItem openMapsWithItems:@[currentLocationMapItem, mapItem]
+                       launchOptions:launchOptions];
+    }
+    
+}
 
 @end

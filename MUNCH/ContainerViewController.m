@@ -61,8 +61,6 @@
     stringLong = [NSString stringWithFormat: @"%lf", currentLocation.coordinate.longitude];
     if (!initialCreate){
         initialCreate = true;
-        NSLog(@"%@", stringLat);
-        NSLog(@"%@", stringLong);
         draggableBackground = [DraggableViewBackground alloc];
         draggableBackground.currentLat = stringLat;
         draggableBackground.currentLong = stringLong;
