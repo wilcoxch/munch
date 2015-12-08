@@ -137,78 +137,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
                 <screenEdgePanGestureRecognizer minimumNumberOfTouches="1" id="wrc-yQ-H8n"/>
             </objects>
-            <point key="canvasLocation" x="294.5" y="422.5"/>
-        </scene>
-        <!--Temp List-->
-        <scene sceneID="jhs-Ra-dpN">
-            <objects>
-                <swipeGestureRecognizer direction="left" id="dAo-GD-htX">
-                    <connections>
-                        <segue destination="vXZ-lx-hvc" kind="show" id="d2F-b7-uUD"/>
-                    </connections>
-                </swipeGestureRecognizer>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qfv-qQ-jZ6" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tableViewController title="Temp List" id="oOL-Gf-edS" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Aj6-8a-MHC">
-                        <rect key="frame" x="0.0" y="64" width="375" height="559"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="bPY-qh-oai">
-                                <rect key="frame" x="0.0" y="22" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bPY-qh-oai" id="Mtv-4X-bdJ">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <animations/>
-                                </tableViewCellContentView>
-                                <animations/>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="oOL-Gf-edS" id="1ou-vA-QjW"/>
-                            <outlet property="delegate" destination="oOL-Gf-edS" id="Qsx-IW-jUG"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Temp List" id="lf3-GQ-Ww8">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="gnL-s4-rNt"/>
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="Z12-Ft-vFF">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="vGi-9e-ntE">
-                                <rect key="frame" x="16" y="7" width="83" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <animations/>
-                                <state key="normal" title="Back">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="vXZ-lx-hvc" kind="modal" modalTransitionStyle="coverVertical" id="BRe-Df-p9r"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
-                    </navigationItem>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                </tableViewController>
-            </objects>
-            <point key="canvasLocation" x="1584.5" y="-505.5"/>
-        </scene>
-        <!--Nav Control1-->
-        <scene sceneID="PbR-2c-IPZ">
-            <objects>
-                <navigationController title="Nav Control1" toolbarHidden="NO" id="4k6-cr-SKT" sceneMemberID="viewController">
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="6jl-QU-oaz">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="oOL-Gf-edS" kind="relationship" relationship="rootViewController" id="FLQ-vn-gff"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mrM-4o-AvU" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="983.5" y="447.5"/>
+            <point key="canvasLocation" x="296.5" y="358.5"/>
         </scene>
         <!--Dragable View-->
         <scene sceneID="fzL-dd-Znu">
@@ -250,6 +179,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <toolbarItems/>
+                    <connections>
+                        <segue destination="mcu-eG-eAh" kind="show" id="Eoa-F0-1WJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uiw-LF-tpG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -260,7 +192,4 @@
         <image name="Back Button png.png" width="130" height="129"/>
         <image name="Gear Button png.png" width="130" height="129"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="31g-as-sGu"/>
-    </inferredMetricsTieBreakers>
 </document>
