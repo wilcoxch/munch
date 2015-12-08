@@ -179,9 +179,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <toolbarItems/>
-                    <connections>
-                        <segue destination="mcu-eG-eAh" kind="show" id="Eoa-F0-1WJ"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uiw-LF-tpG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

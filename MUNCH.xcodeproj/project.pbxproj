@@ -225,14 +225,7 @@
 		31A9DF411C16C0F200398F49 /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 31A9DE4F1C16C0F200398F49 /* Icon-Small@2x.png */; };
 		31A9DF421C16C0F200398F49 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 31A9DE501C16C0F200398F49 /* Icon.png */; };
 		31A9DF431C16C0F200398F49 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 31A9DE511C16C0F200398F49 /* Icon@2x.png */; };
-		31A9DF441C16C0F200398F49 /* Icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 31A9DE521C16C0F200398F49 /* Icon-60@2x.png */; };
-		31A9DF451C16C0F200398F49 /* Icon-60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 31A9DE531C16C0F200398F49 /* Icon-60@3x.png */; };
-		31A9DF461C16C0F200398F49 /* Icon-Small-40.png in Resources */ = {isa = PBXBuildFile; fileRef = 31A9DE541C16C0F200398F49 /* Icon-Small-40.png */; };
-		31A9DF471C16C0F200398F49 /* Icon-Small-40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 31A9DE551C16C0F200398F49 /* Icon-Small-40@2x.png */; };
 		31A9DF481C16C0F200398F49 /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 31A9DE561C16C0F200398F49 /* Icon-Small.png */; };
-		31A9DF491C16C0F200398F49 /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 31A9DE571C16C0F200398F49 /* Icon-Small@2x.png */; };
-		31A9DF4A1C16C0F200398F49 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 31A9DE581C16C0F200398F49 /* Icon.png */; };
-		31A9DF4B1C16C0F200398F49 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 31A9DE591C16C0F200398F49 /* Icon@2x.png */; };
 		31A9DF4C1C16C0F200398F49 /* munchicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 31A9DE5A1C16C0F200398F49 /* munchicon.png */; };
 		31A9DF4D1C16C0F200398F49 /* pizzaButt.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 31A9DE5B1C16C0F200398F49 /* pizzaButt.pdf */; };
 		31A9DF4E1C16C0F200398F49 /* pizzaButt.png in Resources */ = {isa = PBXBuildFile; fileRef = 31A9DE5C1C16C0F200398F49 /* pizzaButt.png */; };
@@ -272,7 +265,6 @@
 		3F9206811C1561B80039F4C2 /* Icon-60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F9206791C1561B80039F4C2 /* Icon-60@3x.png */; };
 		3F9206821C1561B80039F4C2 /* Icon-Small-40.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F92067A1C1561B80039F4C2 /* Icon-Small-40.png */; };
 		3F9206831C1561B80039F4C2 /* Icon-Small-40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F92067B1C1561B80039F4C2 /* Icon-Small-40@2x.png */; };
-		3F9206841C1561B80039F4C2 /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F92067C1C1561B80039F4C2 /* Icon-Small.png */; };
 		3F9206851C1561B80039F4C2 /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F92067D1C1561B80039F4C2 /* Icon-Small@2x.png */; };
 		3F9206861C1561B80039F4C2 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F92067E1C1561B80039F4C2 /* Icon.png */; };
 		3F9206871C1561B80039F4C2 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F92067F1C1561B80039F4C2 /* Icon@2x.png */; };
@@ -1306,7 +1298,7 @@
 		3F67D75B1BD1E41F003D2F75 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = Greybeards;
 				TargetAttributes = {
 					3F67D7621BD1E41F003D2F75 = {
@@ -1399,7 +1391,6 @@
 				31A9DF511C16C0F200398F49 /* thumbs_up_300x300@2x.png in Resources */,
 				31A9DE7D1C16C0F200398F49 /* Icon-Small-40.png in Resources */,
 				31A9DF2D1C16C0F200398F49 /* More Options png 01.png in Resources */,
-				31A9DF441C16C0F200398F49 /* Icon-60@2x.png in Resources */,
 				31A9DEE31C16C0F200398F49 /* Yelp Star Ratings png.png in Resources */,
 				31A9DE6F1C16C0F200398F49 /* .Parent in Resources */,
 				31A9DEFC1C16C0F200398F49 /* Favorites Screen.pdn in Resources */,
@@ -1456,10 +1447,7 @@
 				31A9DF341C16C0F200398F49 /* More Options png 01.png in Resources */,
 				31A9DF2C1C16C0F200398F49 /* More Options pdn 01.pdn in Resources */,
 				31A9DF1C1C16C0F200398F49 /* Main Screen (Restaurant).pdn in Resources */,
-				31A9DF471C16C0F200398F49 /* Icon-Small-40@2x.png in Resources */,
 				31A9DEF01C16C0F200398F49 /* Munch Icon ver 1.2 pdn.pdn in Resources */,
-				31A9DF4A1C16C0F200398F49 /* Icon.png in Resources */,
-				31A9DF461C16C0F200398F49 /* Icon-Small-40.png in Resources */,
 				31A9DF501C16C0F200398F49 /* Settings.jpg in Resources */,
 				31A9DEEF1C16C0F200398F49 /* Munch Icon ver 1.1 pdn.pdn in Resources */,
 				31A9DEBA1C16C0F200398F49 /* Main Screen Buttons.pdn in Resources */,
@@ -1551,15 +1539,12 @@
 				31A9DE9D1C16C0F200398F49 /* Main Screen Buttons (check) pdn.pdn in Resources */,
 				31A9DF2F1C16C0F200398F49 /* Options Screen 03 pdn.pdn in Resources */,
 				31A9DEAB1C16C0F200398F49 /* Button Base (Search).pdn in Resources */,
-				3F9206841C1561B80039F4C2 /* Icon-Small.png in Resources */,
-				31A9DF491C16C0F200398F49 /* Icon-Small@2x.png in Resources */,
 				31A9DEBD1C16C0F200398F49 /* Options and Favorite Buttons.pdn in Resources */,
 				31A9DEC91C16C0F200398F49 /* Back Button pdn.pdn in Resources */,
 				31A9DEA71C16C0F200398F49 /* Back Button png.png in Resources */,
 				31A9DE841C16C0F200398F49 /* Button Base (Small).pdn in Resources */,
 				3F67D7771BD1E41F003D2F75 /* Images.xcassets in Resources */,
 				31A9DEC41C16C0F200398F49 /* Gear Button pdn.pdn in Resources */,
-				31A9DF451C16C0F200398F49 /* Icon-60@3x.png in Resources */,
 				31A9DEB51C16C0F200398F49 /* Main Screen Buttons (check) pdn.pdn in Resources */,
 				31A9DF371C16C0F200398F49 /* Options Screen pdn 01.pdn in Resources */,
 				31A9DE9C1C16C0F200398F49 /* Main Screen Buttons (Alt, ver 4) pdn.pdn in Resources */,
@@ -1574,7 +1559,6 @@
 				31A9DF0C1C16C0F200398F49 /* Load Screen pdn.pdn in Resources */,
 				31A9DE9E1C16C0F200398F49 /* Main Screen Buttons (cross) pdn.pdn in Resources */,
 				31A9DF281C16C0F200398F49 /* Main Screen pdn.pdn in Resources */,
-				31A9DF4B1C16C0F200398F49 /* Icon@2x.png in Resources */,
 				31A9DEED1C16C0F200398F49 /* Munch Icon ver 1.3 pdn.pdn in Resources */,
 				31A9DED71C16C0F200398F49 /* Options Screen png.png in Resources */,
 				31A9DE6E1C16C0F200398F49 /* Finished Assets - Shortcut.lnk in Resources */,
