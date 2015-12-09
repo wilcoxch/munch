@@ -98,9 +98,31 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
     UIImage *img = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:urlString]]];
     UIImage *ratingimg = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:urlReviewString]]];
     UIImage *rateimg = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:urlRating]]];
+    
+    //    NSURL *callPhone = [NSURL URLWithString:[NSString stringWithFormat:@"tel:%@", phoneString]];
+    
+    NSMutableString *phoneInfo = [exampleCardLabels[index] objectForKey:@"display_phone"];
+    NSMutableString *phone = [[phoneInfo mutableCopy] autorelease];
+    [phone replaceOccurrencesOfString:@" "
+                           withString:@""
+                              options:NSLiteralSearch
+                                range:NSMakeRange(0, [phone length])];
+    [phone replaceOccurrencesOfString:@"("
+                           withString:@""
+                              options:NSLiteralSearch
+                                range:NSMakeRange(0, [phone length])];
+    [phone replaceOccurrencesOfString:@")"
+                           withString:@""
+                              options:NSLiteralSearch
+                                range:NSMakeRange(0, [phone length])];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"tel:%@", phone]];
+    [[UIApplication sharedApplication] openURL:url];
+    
     draggableView.picture.image = img;
     draggableView.review_image.image = ratingimg;
     draggableView.rating.image = rateimg;
+    draggableView.callPhone = url;
+
     
     double cardLat = [currentLat doubleValue];
     double cardLong = [currentLong doubleValue];
