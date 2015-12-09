@@ -52,6 +52,7 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
         cardsLoadedIndex = 0;
         [self loadCards];
     }
+    
     return self;
 }
 
