@@ -56,17 +56,13 @@
                                 <rect key="frame" x="30" y="19" width="50" height="50"/>
                                 <animations/>
                                 <accessibility key="accessibilityConfiguration" label=""/>
-                                <state key="normal" title="BACK" image="Back Button png.png">
+                                <state key="normal" title="BACK" image="Back_Button.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="vXZ-lx-hvc" kind="show" id="31g-as-sGu"/>
                                 </connections>
                             </button>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p1L-p6-EFA">
-                                <rect key="frame" x="33" y="351" width="51" height="31"/>
-                                <animations/>
-                            </switch>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -115,7 +111,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nKK-bA-Euc">
                                 <rect key="frame" x="29" y="19" width="50" height="50"/>
                                 <animations/>
-                                <state key="normal" image="Gear Button png.png">
+                                <state key="normal" image="Gear_Button.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -139,102 +135,6 @@
             </objects>
             <point key="canvasLocation" x="294.5" y="422.5"/>
         </scene>
-        <!--Temp List-->
-        <scene sceneID="jhs-Ra-dpN">
-            <objects>
-                <tableViewController title="Temp List" id="oOL-Gf-edS" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Aj6-8a-MHC">
-                        <rect key="frame" x="0.0" y="64" width="375" height="559"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="bPY-qh-oai">
-                                <rect key="frame" x="0.0" y="22" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bPY-qh-oai" id="Mtv-4X-bdJ">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <animations/>
-                                </tableViewCellContentView>
-                                <animations/>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="oOL-Gf-edS" id="1ou-vA-QjW"/>
-                            <outlet property="delegate" destination="oOL-Gf-edS" id="Qsx-IW-jUG"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Temp List" id="lf3-GQ-Ww8">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="gnL-s4-rNt"/>
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="Z12-Ft-vFF">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="vGi-9e-ntE">
-                                <rect key="frame" x="16" y="7" width="83" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <animations/>
-                                <state key="normal" title="Back">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="vXZ-lx-hvc" kind="modal" modalTransitionStyle="coverVertical" id="BRe-Df-p9r"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
-                    </navigationItem>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                </tableViewController>
-                <swipeGestureRecognizer direction="left" id="dAo-GD-htX">
-                    <connections>
-                        <segue destination="vXZ-lx-hvc" kind="show" id="d2F-b7-uUD"/>
-                    </connections>
-                </swipeGestureRecognizer>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qfv-qQ-jZ6" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1584.5" y="-505.5"/>
-        </scene>
-        <!--Nav Control1-->
-        <scene sceneID="PbR-2c-IPZ">
-            <objects>
-                <navigationController title="Nav Control1" toolbarHidden="NO" id="4k6-cr-SKT" sceneMemberID="viewController">
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="6jl-QU-oaz">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="oOL-Gf-edS" kind="relationship" relationship="rootViewController" id="FLQ-vn-gff"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mrM-4o-AvU" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="983.5" y="447.5"/>
-        </scene>
-        <!--Dragable View-->
-        <scene sceneID="fzL-dd-Znu">
-            <objects>
-                <viewController id="mcu-eG-eAh" customClass="GGDragableView" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="yIU-g7-nFF"/>
-                        <viewControllerLayoutGuide type="bottom" id="M7d-D6-mHh"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="FZt-UG-J8w" customClass="GGDragableView">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <gestureRecognizers/>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="7v2-DK-2ks" appends="YES" id="wF4-h7-kdI"/>
-                        </connections>
-                    </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="D4p-gj-n5C" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="7v2-DK-2ks"/>
-            </objects>
-            <point key="canvasLocation" x="78.5" y="1245.5"/>
-        </scene>
         <!--Container View Controller-->
         <scene sceneID="OkA-nf-pxA">
             <objects>
@@ -257,10 +157,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Back Button png.png" width="130" height="129"/>
-        <image name="Gear Button png.png" width="130" height="129"/>
+        <image name="Back_Button.png" width="130" height="129"/>
+        <image name="Gear_Button.png" width="130" height="129"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="31g-as-sGu"/>
-    </inferredMetricsTieBreakers>
 </document>
