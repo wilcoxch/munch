@@ -58,8 +58,12 @@
 @property (nonatomic,strong)UIImageView* rating;
 @property (nonatomic,strong)MKMapView* mapView;
 @property (nonatomic,strong)MKPlacemark* placemark;
+@property (nonatomic,strong)NSURL* callPhone;
+@property (nonatomic,strong)UIButton* phoneButton;
 
 -(void)leftClickAction;
 -(void)rightClickAction;
+-(IBAction)setMap:(id)sender;
+-(IBAction)openBrowser;
 
 @end

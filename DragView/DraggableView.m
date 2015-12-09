@@ -34,6 +34,8 @@
 @synthesize review_image;
 @synthesize mapView;
 @synthesize placemark;
+@synthesize phoneButton;
+@synthesize callPhone;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -42,26 +44,33 @@
         [self setupView];
         
 #warning placeholder stuff, replace with card-specific information {
-        information = [[UILabel alloc]initWithFrame:CGRectMake(0, 50, self.frame.size.width, 175)];
+        information = [[UILabel alloc]initWithFrame:CGRectMake(5, 120, self.frame.size.width -10, 50)];
         information.text = @"no info given";
         [information setTextAlignment:NSTextAlignmentCenter];
         information.textColor = [UIColor blackColor];
-        review_text = [[UILabel alloc]initWithFrame:CGRectMake(0, 50, self.frame.size.width, 500)];
+        [information setFont:[UIFont fontWithName:@"ArialRoundedMTBold" size:19]]; information.text=@"sagar";
+
+        review_text = [[UILabel alloc]initWithFrame:CGRectMake(10, 10, self.frame.size.width - 20, 500)];
         review_text.text = @"no info given";
         [review_text setTextAlignment:NSTextAlignmentCenter];
+        [review_text setFont:[UIFont fontWithName:@"Arial-ItalicMT" size:16]]; information.text=@"sagar";
         review_text.textColor = [UIColor blackColor];
-        phone_number = [[UILabel alloc]initWithFrame:CGRectMake(0, 50, self.frame.size.width, 250)];
-        phone_number.text = @"no info given";
-        [phone_number setTextAlignment:NSTextAlignmentCenter];
-        phone_number.textColor = [UIColor blackColor];
+
         picture = [[UIImageView alloc] initWithFrame:CGRectMake(0  , 0, 100, 100)];
         [picture setCenter: CGPointMake(self.frame.size.width/6, self.frame.size.height/8)];
         picture.tintColor = [UIColor grayColor];
-        rating = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 200, 40)];
+        rating = [[UIImageView alloc] initWithFrame:CGRectMake(0, 10, 200, 40)];
         [rating setCenter: CGPointMake(self.frame.size.width/1.5, 25)];
         review_image = [[UIImageView alloc] initWithFrame:CGRectMake(0  , self.frame.size.height, 80, 80)];
         [review_image setCenter: CGPointMake(self.frame.size.width/6, self.frame.size.height/8)];
         review_image.tintColor = [UIColor grayColor];
+        
+        UIButton *callPress = [UIButton buttonWithType: UIButtonTypeCustom];
+        [callPress setFrame:CGRectMake(120, 55, 60, 60)];
+        UIImage *callPressNormalImage = [UIImage imageNamed:@"call-button.png"];
+        [callPress setBackgroundImage:callPressNormalImage forState:UIControlStateNormal];
+        [callPress addTarget:self action:@selector(openBrowser) forControlEvents:UIControlEventTouchUpInside];
+
         
         mapView = [[MKMapView alloc]initWithFrame:CGRectMake(0,(self.bounds.size.height)-155,(self.bounds.size.width),(self.bounds.size.height)/3)];
         mapView.showsUserLocation = YES;
@@ -81,7 +90,8 @@
         [self addSubview:picture];
         [self addSubview:rating];
         [self addSubview:review_text];
-        [self addSubview:phone_number];
+        [self addSubview:callPress];
+        //[self addSubview:phone_number];
         [self addSubview:mapView];
         //[self addSubview:review_image];
         
@@ -254,6 +264,10 @@
     NSLog(@"NO");
 }
 
+-(void)openBrowser {
+    NSLog(@"%@ sdgsd", callPhone);
+    [[UIApplication sharedApplication] openURL:callPhone];
+}
 
 
 @end

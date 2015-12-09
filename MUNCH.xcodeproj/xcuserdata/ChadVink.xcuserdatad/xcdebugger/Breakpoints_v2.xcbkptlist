@@ -31,7 +31,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "143"
             endingLineNumber = "143"
-            landmarkName = "-loadCards"
+            landmarkName = "-createDraggableViewWithDataAtIndex:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -47,7 +47,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "141"
             endingLineNumber = "141"
-            landmarkName = "-loadCards"
+            landmarkName = "-createDraggableViewWithDataAtIndex:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

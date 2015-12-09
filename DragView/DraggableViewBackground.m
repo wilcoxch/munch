@@ -91,7 +91,7 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
     //draggableView.information.text = [exampleCardLabels objectAtIndex:index]; //%%% placeholder for card-specific information
     draggableView.information.text = [exampleCardLabels[index] objectForKey:@"name"];
     draggableView.review_text.text = [exampleCardLabels[index] objectForKey:@"snippet_text"];
-    draggableView.phone_number.text = [exampleCardLabels[index] objectForKey:@"display_phone"];
+//    draggableView.phone_number.text = [exampleCardLabels[index] objectForKey:@"display_phone"];
     NSString *urlString = [exampleCardLabels[index] objectForKey:@"image_url"];
     NSString *urlReviewString = [exampleCardLabels[index] objectForKey:@"snippet_image_url"];
     NSString *urlRating = [exampleCardLabels[index] objectForKey:@"rating_img_url_large"];
@@ -116,7 +116,7 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
                               options:NSLiteralSearch
                                 range:NSMakeRange(0, [phone length])];
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"tel:%@", phone]];
-    [[UIApplication sharedApplication] openURL:url];
+    //[[UIApplication sharedApplication] openURL:url];
     
     draggableView.picture.image = img;
     draggableView.review_image.image = ratingimg;
