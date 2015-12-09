@@ -40,6 +40,7 @@
 @synthesize latitude;
 @synthesize longitude;
 @synthesize phoneButton;
+@synthesize callPhone;
 
 //@synthesize callPhone;
 //@synthesize locationManager;
@@ -77,39 +78,11 @@
         double mapLongi = [longitude doubleValue];
         
         UIButton *callPress = [UIButton buttonWithType: UIButtonTypeCustom];
-//        [callPress setTitle:@"Press to Call" forState:UIControlStateNormal];
         [callPress setFrame:CGRectMake(120, 55, 60, 60)];
-
         UIImage *callPressNormalImage = [UIImage imageNamed:@"call-button.png"];
         [callPress setBackgroundImage:callPressNormalImage forState:UIControlStateNormal];
-        
-        
+        [callPress addTarget:self action:@selector(openBrowser) forControlEvents:UIControlEventTouchUpInside];
 
-
-//        phone_number = [[NSString alloc]initWithFrame:CGRectMake(130, 50, 200, 30)];
-//        phone_number.text = @"no info given";
-//        [phone_number setTextAlignment:NSTextAlignmentCenter];
-//        phone_number.textColor = [UIColor blackColor];
-//        [phone_number setFont:[UIFont fontWithName:@"ArialRoundedMTBold" size:19]]; information.text=@"sagar";
-//        callPhone = [NSURL alloc];
-        
-        
-//        phone_number = [NSURL alloc];
-//        phone_number = [[UITextView alloc]initWithFrame:CGRectMake(130  , 50, 200, 30)];
-//        phone_number.text = @"no info given";
-//        phone_number = [UITextView stringWithFormat:@"tel:%@", phone_number];
-        
-//        phone_number.editable = NO;
-//        phone_number.dataDetectorTypes = UIDataDetectorTypePhoneNumber;
-//        [phone_number setFont:[UIFont fontWithName:@"ArialRoundedMTBold" size:17]]; phone_number.text=@"sagar";
-//        [phone_number setTextAlignment:NSTextAlignmentCenter];
-//        phone_number.textColor = [UIColor blackColor];
-//        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"tel:%@", phone_number]];
-//        [[UIApplication sharedApplication] openURL:url];
-
-
-        
-//        maplat.double = @"0.0";
         
         mapView = [[MKMapView alloc]initWithFrame:CGRectMake(0,(self.bounds.size.height)-155,(self.bounds.size.width),(self.bounds.size.height)/3)];
         mapView.showsUserLocation = YES;
@@ -129,16 +102,7 @@
         region.span.longitudeDelta = 1.0f;
         region.span.latitudeDelta = 1.0f;
         [mapView setRegion:region animated:YES];
-        
-//#warning this is where I am getting current location
-//        manager = [[CLLocationManager alloc] init];
-//        geocoder = [[CLGeocoder alloc] init];
-//        
-//        manager.delegate = self;
-//        manager.desiredAccuracy = kCLLocationAccuracyBest;
-//        
-//        [manager startUpdatingLocation];
-        
+
 
         
         self.backgroundColor = [UIColor whiteColor];
@@ -148,7 +112,7 @@
         
         panGestureRecognizer = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(beingDragged:)];
         
-        [self addSubview:phone_number];
+//        [self addSubview:phone_number];
         [self addGestureRecognizer:panGestureRecognizer];
         [self addSubview:information];
         [self addSubview:picture];
@@ -332,6 +296,11 @@
 //-(IBAction)pushButton {
 //    [[UIApplication sharedApplication] openURL: [NSURLWithString:"@http://www.youtube.com"]];
 //}
+
+-(void)openBrowser {
+    NSLog(@"%@ sdgsd", callPhone);
+    [[UIApplication sharedApplication] openURL:callPhone];
+}
 
 
 @end

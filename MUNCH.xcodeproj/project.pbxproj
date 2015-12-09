@@ -48,7 +48,6 @@
 		825FE73F1C16BA9C002953CD /* call-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 825FE73E1C16BA9C002953CD /* call-button.png */; };
 		8281957F1C1145C90066C26A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8281957E1C1145C90066C26A /* MapKit.framework */; };
 		829965491BFF0A8700B44EF9 /* Bored_90x90.gif in Resources */ = {isa = PBXBuildFile; fileRef = 829965481BFF0A8700B44EF9 /* Bored_90x90.gif */; };
-		829A99F81BF15D5600C418FF /* bar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 829A99F71BF15D5600C418FF /* bar@2x.png */; };
 		829A99FA1BF15DCB00C418FF /* trollface_300x200@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 829A99F91BF15DCB00C418FF /* trollface_300x200@2x.png */; };
 		82A1F0EE1BF130CA00AE8E58 /* thumbs_up_300x300@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82A1F0EB1BF130CA00AE8E58 /* thumbs_up_300x300@2x.png */; };
 		82A22BFE1BF596BE00265C56 /* DraggableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 82A22BF91BF596BE00265C56 /* DraggableView.m */; };
@@ -139,7 +138,6 @@
 		825FE73E1C16BA9C002953CD /* call-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "call-button.png"; path = "../Images/call-button.png"; sourceTree = "<group>"; };
 		8281957E1C1145C90066C26A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		829965481BFF0A8700B44EF9 /* Bored_90x90.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = Bored_90x90.gif; path = ../Images/Bored_90x90.gif; sourceTree = "<group>"; };
-		829A99F71BF15D5600C418FF /* bar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bar@2x.png"; path = "../Images/bar@2x.png"; sourceTree = "<group>"; };
 		829A99F91BF15DCB00C418FF /* trollface_300x200@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "trollface_300x200@2x.png"; path = "../Images/trollface_300x200@2x.png"; sourceTree = "<group>"; };
 		82A1F0EB1BF130CA00AE8E58 /* thumbs_up_300x300@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "thumbs_up_300x300@2x.png"; path = "MUNCH.xcodeproj/thumbs_up_300x300@2x.png"; sourceTree = SOURCE_ROOT; };
 		82A22BF81BF596BE00265C56 /* DraggableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DraggableView.h; path = DragView/DraggableView.h; sourceTree = "<group>"; };
@@ -360,7 +358,6 @@
 				31D771C81C10FCAA009FDEAD /* icon */,
 				829A99F91BF15DCB00C418FF /* trollface_300x200@2x.png */,
 				829965481BFF0A8700B44EF9 /* Bored_90x90.gif */,
-				829A99F71BF15D5600C418FF /* bar@2x.png */,
 				82A1F0EB1BF130CA00AE8E58 /* thumbs_up_300x300@2x.png */,
 				82FE3A351BF06B2600B28CC6 /* Settings.jpg */,
 			);
@@ -416,7 +413,7 @@
 				TargetAttributes = {
 					3F67D7621BD1E41F003D2F75 = {
 						CreatedOnToolsVersion = 6.3.2;
-						DevelopmentTeam = 9A29YRQ4XD;
+						DevelopmentTeam = 6Z4G95PNNA;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
 								enabled = 1;
@@ -462,7 +459,6 @@
 				82FE3A361BF06B2600B28CC6 /* Settings.jpg in Resources */,
 				829A99FA1BF15DCB00C418FF /* trollface_300x200@2x.png in Resources */,
 				3F67D7751BD1E41F003D2F75 /* Main.storyboard in Resources */,
-				829A99F81BF15D5600C418FF /* bar@2x.png in Resources */,
 				31D771C01C10FC9F009FDEAD /* Icon-60@2x.png in Resources */,
 				31D771C11C10FC9F009FDEAD /* Icon-60@3x.png in Resources */,
 				3F67D77A1BD1E41F003D2F75 /* LaunchScreen.xib in Resources */,
@@ -645,7 +641,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = MUNCH/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.sonoma.cs.www.MUNCH.XXX;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sonoma.cs.www.MUNCH.111;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -659,7 +655,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = MUNCH/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.sonoma.cs.www.MUNCH.XXX;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sonoma.cs.www.MUNCH.111;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

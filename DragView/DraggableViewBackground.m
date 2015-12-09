@@ -86,16 +86,12 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
     //draggableView.information.text = [exampleCardLabels objectAtIndex:index]; //%%% placeholder for card-specific information
     draggableView.information.text = [exampleCardLabels[index] objectForKey:@"name"];
     draggableView.review_text.text = [exampleCardLabels[index] objectForKey:@"snippet_text"];
-//    NSString *phoneString = [exampleCardLabels[index] objectForKey:@"display_phone"];
-//    draggableView.phone_number.text = [exampleCardLabels[index] objectForKey:@"display_phone"];
-//    UITextView *callphone = [exampleCardLabels[index] objectForKey:@"display_phone"];
     NSString *urlString = [exampleCardLabels[index] objectForKey:@"image_url"];
     NSString *urlReviewString = [exampleCardLabels[index] objectForKey:@"snippet_image_url"];
     NSString *urlRating = [exampleCardLabels[index] objectForKey:@"rating_img_url_large"];
     UIImage *img = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:urlString]]];
     UIImage *ratingimg = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:urlReviewString]]];
     UIImage *rateimg = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:urlRating]]];
-//    NSURL *callPhone = [NSURL URLWithString:[NSString stringWithFormat:@"tel:%@", phoneString]];
 
     NSMutableString *phoneInfo = [exampleCardLabels[index] objectForKey:@"display_phone"];
     NSMutableString *phone = [[phoneInfo mutableCopy] autorelease];
@@ -112,17 +108,14 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
                               options:NSLiteralSearch
                                 range:NSMakeRange(0, [phone length])];
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"tel:%@", phone]];
-    [[UIApplication sharedApplication] openURL:url];
 
     
+    
+    draggableView.callPhone = url;
     draggableView.picture.image = img;
     draggableView.review_image.image = ratingimg;
     draggableView.rating.image = rateimg;
-    draggableView.callPhone = url;
-    
-//    draggableView.phone_number = url;
     draggableView.delegate = self;
-//    [draggableView.phoneButton setTitle: phoneInfo forState:UIControlStateNormal];
     
     return draggableView;
 }
@@ -190,7 +183,6 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
 
 }
 
-#warning include own action here!
 //%%% action called when the card goes to the right.
 // This should be customized with your own action
 -(void)cardSwipedRight:(UIView *)card
@@ -240,11 +232,6 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
     [dragView leftClickAction];
 }
 
-//-(void)buttonPressed:(id)sender{
-//    // open url
-//    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:phoneString]];
-//    
-//}
 
 /*
 // Only override drawRect: if you perform custom drawing.

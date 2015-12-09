@@ -37,6 +37,7 @@
 @property (nonatomic,retain)NSString* latitude;
 @property (nonatomic,strong)NSURL* callPhone;
 @property (nonatomic,strong)UIButton* phoneButton;
+
 //@property (nonatomic,assign)CLLocationDegrees mapLat;
 //@property (nonatomic,assign)CLLocationDegrees mapLong;
 
@@ -45,6 +46,6 @@
 -(void)leftClickAction;
 -(void)rightClickAction;
 -(IBAction)setMap:(id)sender;
--(IBAction)pressForCall:(id)sender;
+-(IBAction)openBrowser;
 
 @end
