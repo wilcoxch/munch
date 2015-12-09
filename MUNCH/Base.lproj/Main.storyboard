@@ -139,21 +139,17 @@
         <scene sceneID="OkA-nf-pxA">
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="kQW-Ge-XWY" customClass="ContainerViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="KFK-QG-Qjy"/>
-                        <viewControllerLayoutGuide type="bottom" id="kG4-5u-1Hx"/>
-                    </layoutGuides>
-                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="x7x-jN-OoV">
+                    <activityIndicatorView key="view" opaque="NO" contentMode="center" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" id="qlu-XX-PY5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="581"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
+                        <color key="color" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </activityIndicatorView>
                     <toolbarItems/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uiw-LF-tpG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="512.5" y="1210"/>
+            <point key="canvasLocation" x="510.5" y="1217.5"/>
         </scene>
     </scenes>
     <resources>

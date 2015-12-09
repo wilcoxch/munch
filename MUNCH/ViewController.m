@@ -28,7 +28,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     distance = 1609.34;
 }
 

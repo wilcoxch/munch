@@ -40,6 +40,7 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
 {
     self = [super initWithFrame:frame];
     if (self) {
+        
         [super layoutSubviews];
         [self setupView];
 //        [self YelpCall];
